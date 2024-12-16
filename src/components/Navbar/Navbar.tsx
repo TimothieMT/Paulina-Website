@@ -1,4 +1,3 @@
-// ResponsiveAppBar.tsx
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -19,7 +18,7 @@ const pages = [
   { name: 'Kontakt', path: '/contact' },
 ];
 
-function ResponsiveAppBar() {
+function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -35,41 +34,70 @@ function ResponsiveAppBar() {
       position="static"
       sx={{
         backgroundColor: 'transparent',
-        boxShadow: 'none', // Entfernt den Schatten
-        borderBottom: 'none', // Entfernt die untere Rahmenlinie
+        boxShadow: 'none',
+        borderBottom: 'none',
       }}
-      elevation={0} // Entfernt jegliche Elevation
+      elevation={0}
     >
-      <Box margin={5}>
+      {/*
+        Mit 'margin' als responsive Objekt kannst du Abstände für unterschiedliche Breakpoints festlegen:
+        xs (Mobile), sm, md, lg, xl.
+      */}
+      <Box sx={{ margin: { xs: '16px 10px', md: '48px 10px' } }}>
         <Toolbar disableGutters>
-          {/* Logo und Titel für Desktop */}
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', flexGrow: 1 }}>
-            <IconButton
-              component={Link}
-              to="/content"
-              sx={{ mr: 1 }}
-              color="inherit"
-            >
+          {/* Desktop-Ansicht (md aufwärts): Logo, Titel links */}
+          <Box
+            sx={{
+              display: { xs: 'none', md: 'flex' },
+              alignItems: 'center',
+              flexGrow: 1,
+            }}
+          >
+            <IconButton component={Link} to="/content">
               <HomeIcon sx={{ color: '#383838' }} />
             </IconButton>
-            <Box>
-              <Typography variant="h6" sx={{ color: '#383838', fontWeight: 'bold' }}>Paulina Tolk</Typography>
-              <Typography variant="subtitle1" sx={{ color: '#383838' }}>Privatpraxis für Systemische Therapie</Typography>
+            <Box sx={{ ml: 1 }}>
+              <Typography variant="h6" sx={{ color: '#383838', fontWeight: 'bold' }}>
+                Paulina Tolk
+              </Typography>
+              <Typography variant="subtitle1" sx={{ color: '#383838' }}>
+                Privatpraxis für Systemische Therapie
+              </Typography>
             </Box>
           </Box>
-          {/* Menü-Button für Mobile */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+
+          {/* Mobile-Ansicht (xs, sm): Logo, Titel links */}
+          <Box
+            sx={{
+              display: { xs: 'flex', md: 'none' },
+              alignItems: 'center',
+              flexGrow: 1,
+            }}
+          >
+            <IconButton component={Link} to="/content" color="inherit">
+              <HomeIcon sx={{ color: '#383838' }} />
+            </IconButton>
+            <Box sx={{ ml: 1 }}>
+              <Typography variant="h6" sx={{ color: '#383838', fontWeight: 'bold', lineHeight: 1.2 }}>
+                Paulina Tolk
+              </Typography>
+              <Typography variant="subtitle2" sx={{ color: '#383838', lineHeight: 1.2 }}>
+                Privatpraxis für Systemische Therapie
+              </Typography>
+            </Box>
+          </Box>
+
+          {/* Mobiles Burger-Menü (Rechts) */}
+          <Box sx={{ display: { xs: 'flex', md: 'none' }}}>
             <IconButton
               size="large"
               aria-label="Menü öffnen"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
             >
               <MenuIcon sx={{ color: '#383838' }} />
             </IconButton>
-            {/* Mobiles Menü */}
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -87,7 +115,7 @@ function ResponsiveAppBar() {
               sx={{
                 display: { xs: 'block', md: 'none' },
                 '& .MuiPaper-root': {
-                  backgroundColor: '#addda7',
+                  backgroundColor: '#fbfbfb',
                   boxShadow: 'none',
                 },
               }}
@@ -109,31 +137,14 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          {/* Logo und Titel für Mobile */}
-          <Box sx={{ display: { xs: 'flex', md: 'none' }, alignItems: 'center', flexGrow: 1 }}>
-            <IconButton
-              component={Link}
-              to="/content"
-              sx={{ mr: 1 }}
-              color="inherit"
-            >
-              <HomeIcon sx={{ color: '#383838' }} />
-            </IconButton>
-            <Typography
-              variant="h5"
-              noWrap
-              component="div"
-              sx={{
-                fontWeight: 'bold',
-                color: '#383838',
-                textDecoration: 'none',
-              }}
-            >
-              Paulina Tolk
-            </Typography>
-          </Box>
-          {/* Desktop-Menü */}
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
+
+          {/* Desktop-Menü (Rechts) */}
+          <Box
+            sx={{
+              display: { xs: 'none', md: 'flex' },
+              justifyContent: 'flex-end',
+            }}
+          >
             {pages.map((page) => (
               <Button
                 key={page.name}
@@ -160,4 +171,4 @@ function ResponsiveAppBar() {
   );
 }
 
-export default ResponsiveAppBar;
+export default Navbar;
