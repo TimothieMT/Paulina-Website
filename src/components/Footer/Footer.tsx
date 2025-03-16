@@ -23,15 +23,10 @@ const Footer = () => {
       <Box
         component="footer"
         position="sticky"
-        sx={{
-          backgroundColor: '#fbfbfb',
-          py: { xs: 2, md: 4 },
-          px: { xs: 2, md: 8 },
-        }}
+        marginTop={4}
       >
         <Grid
           container
-          spacing={4}
           justifyContent="space-between"
           alignItems="center"
           direction={{ xs: 'column', md: 'row' }}
@@ -39,10 +34,7 @@ const Footer = () => {
           <Grid item xs={12} md="auto">
             <Item sx={{ display: 'flex', alignItems: 'center', justifyContent: { xs: 'center', md: 'flex-start' } }}>
               <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', md: 'flex-start' } }}>
-                <img src="/vite.svg" alt="Logo" style={{ height: 40, marginBottom: 20 }} />
-                <Typography variant="h5" sx={{ fontWeight: 'bold' }}>Paulina Tolk</Typography>
-                <Typography variant="h6">Heilpraktikerin für Psychotherapie</Typography>
-                <Typography variant="h6">Systemische Therapie und Beratung</Typography>
+                <a href="/mainPoints"> <img src={'src/assets/logos/Bildschirmfoto 2025-03-15 um 21.56.57.png'} width={400} height={100} /></a>
               </Box>
             </Item>
           </Grid>
@@ -51,36 +43,33 @@ const Footer = () => {
             <Stack
               direction={{ xs: 'row', sm: 'row' }}
               spacing={1}
+              marginRight={2}
               divider={<Divider orientation="vertical" flexItem />}
               alignItems="center"
               justifyContent={{ xs: 'center', md: 'flex-end' }}
+              sx={{
+                '& a': {
+                  fontFamily: 'Roboto, sans-serif',
+                  color: '#b1b1b1', // Farbe für alle Links setzen
+                  textDecoration: 'none' // Entfernt Unterstreichung
+                }
+              }}
             >
-              <Link href="/mainPoints" color="inherit" underline="none">
-                Schwerpunkte
-              </Link>
-              <Link href="/offers" color="inherit" underline="none">
-                Angebote
-              </Link>
-              <Link href="/aboutMe" color="inherit" underline="none">
-                Über mich
-              </Link>
-              <Link href="/contact" color="inherit" underline="none">
-                Kontakt
-              </Link>
-              <Link href="/impressum" color="inherit" underline="none">
-                Impressum
-              </Link>
+              <Link href="/mainPoints">Schwerpunkte</Link>
+              <Link href="/offers">Angebote</Link>
+              <Link href="/contact">Kontakt</Link>
+              <Link href="/impressum">Impressum</Link>
             </Stack>
           </Grid>
         </Grid>
 
         <Typography
           variant="body2"
-          color="textSecondary"
           align="center"
-          sx={{ mt: 4 }}
+          fontSize={10}
+          sx={{ color: '#737373'}}
         >
-          © {currentYear} Psychotherapie Paulina Tolk. Alle Rechte vorbehalten.
+          © {currentYear} Therapie Paulina Tolk. Alle Rechte vorbehalten.
         </Typography>
       </Box>
     </Container>

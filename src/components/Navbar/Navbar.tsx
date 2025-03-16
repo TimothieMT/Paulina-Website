@@ -14,7 +14,6 @@ import { Link } from 'react-router-dom';
 const pages = [
   { name: 'Schwerpunkte', path: '/mainPoints' },
   { name: 'Angebot', path: '/offers' },
-  { name: 'Über Mich', path: '/aboutMe' },
   { name: 'Kontakt', path: '/contact' },
 ];
 
@@ -53,17 +52,7 @@ function Navbar() {
               flexGrow: 1,
             }}
           >
-            <IconButton component={Link} to="/content">
-              <HomeIcon sx={{ color: '#383838' }} />
-            </IconButton>
-            <Box sx={{ ml: 1 }}>
-              <Typography variant="h6" sx={{ color: '#383838', fontWeight: 'bold' }}>
-                Paulina Tolk
-              </Typography>
-              <Typography variant="subtitle1" sx={{ color: '#383838' }}>
-                Privatpraxis für Systemische Therapie
-              </Typography>
-            </Box>
+            <a href="/#"> <img src={'src/assets/logos/Bildschirmfoto 2025-03-15 um 21.56.57.png'} width={400} height={100} /></a>
           </Box>
 
           {/* Mobile-Ansicht (xs, sm): Logo, Titel links */}
@@ -132,7 +121,7 @@ function Navbar() {
                     },
                   }}
                 >
-                  <Typography textAlign="center" sx={{ color: '#383838' }}>{page.name}</Typography>
+                  <Typography textAlign="center" sx={{ color: '#737373' }}>{page.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>

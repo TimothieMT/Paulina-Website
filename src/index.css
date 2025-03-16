@@ -1,9 +1,8 @@
 Farben für die App Hauptfarbe #addda7 Nebenfarbe #dddddd Textfarbe #383838
-
-
 #root, html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
 }

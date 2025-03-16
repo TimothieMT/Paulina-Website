@@ -9,7 +9,7 @@ const Impressum = () => {
   return (
     <Container maxWidth="xl">
       {/* Äußere Box als Wrapper */}
-      <Box sx={{ py: 4 }}>
+      <Box>
         <Typography variant="h4" gutterBottom>
           Impressum
         </Typography>
