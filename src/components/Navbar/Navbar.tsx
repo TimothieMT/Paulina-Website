@@ -8,17 +8,18 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import HomeIcon from '@mui/icons-material/Home';
 import { Link } from 'react-router-dom';
+import { useMediaQuery, useTheme } from '@mui/material';
 
 const pages = [
-  { name: 'Schwerpunkte', path: '/mainPoints' },
-  { name: 'Angebot', path: '/offers' },
-  { name: 'Kontakt', path: '/contact' },
+  { name: 'Kostenübersicht', path: '/overview' },
+  { name: 'Vita', path: '/vita' },
 ];
 
 function Navbar() {
+  const theme = useTheme();
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -32,130 +33,87 @@ function Navbar() {
     <AppBar
       position="static"
       sx={{
-        backgroundColor: 'transparent',
+        background: '#efeeee',
         boxShadow: 'none',
         borderBottom: 'none',
+        marginBottom: '80px',
       }}
-      elevation={0}
     >
-      {/*
-        Mit 'margin' als responsive Objekt kannst du Abstände für unterschiedliche Breakpoints festlegen:
-        xs (Mobile), sm, md, lg, xl.
-      */}
-      <Box sx={{ margin: { xs: '16px 10px', md: '48px 10px' } }}>
-        <Toolbar disableGutters>
-          {/* Desktop-Ansicht (md aufwärts): Logo, Titel links */}
-          <Box
-            sx={{
-              display: { xs: 'none', md: 'flex' },
-              alignItems: 'center',
-              flexGrow: 1,
-            }}
-          >
-            <a href="/#"> <img src={'src/assets/logos/Bildschirmfoto 2025-03-15 um 21.56.57.png'} width={400} height={100} /></a>
-          </Box>
-
-          {/* Mobile-Ansicht (xs, sm): Logo, Titel links */}
-          <Box
-            sx={{
-              display: { xs: 'flex', md: 'none' },
-              alignItems: 'center',
-              flexGrow: 1,
-            }}
-          >
-            <IconButton component={Link} to="/content" color="inherit">
-              <HomeIcon sx={{ color: '#383838' }} />
-            </IconButton>
-            <Box sx={{ ml: 1 }}>
-              <Typography variant="h6" sx={{ color: '#383838', fontWeight: 'bold', lineHeight: 1.2 }}>
-                Paulina Tolk
-              </Typography>
-              <Typography variant="subtitle2" sx={{ color: '#383838', lineHeight: 1.2 }}>
-                Privatpraxis für Systemische Therapie
-              </Typography>
-            </Box>
-          </Box>
-
-          {/* Mobiles Burger-Menü (Rechts) */}
-          <Box sx={{ display: { xs: 'flex', md: 'none' }}}>
-            <IconButton
-              size="large"
-              aria-label="Menü öffnen"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-            >
-              <MenuIcon sx={{ color: '#383838' }} />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
+      <Toolbar
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexDirection: isSmallScreen ? 'column' : 'row',
+        }}
+      >
+        <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3 }}>
+          {pages.map((page) => (
+            <Button
+              key={page.name}
+              component={Link}
+              to={page.path}
               sx={{
-                display: { xs: 'block', md: 'none' },
-                '& .MuiPaper-root': {
-                  backgroundColor: '#fbfbfb',
-                  boxShadow: 'none',
-                },
+                backgroundColor: 'transparent',
+                color: '#737373',
+                '&:hover': { backgroundColor: '#85ab7f', color: '#fff' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem
-                  key={page.name}
-                  onClick={handleCloseNavMenu}
-                  component={Link}
-                  to={page.path}
-                  sx={{
-                    '&:hover': {
-                      backgroundColor: '#dddddd',
-                    },
-                  }}
-                >
-                  <Typography textAlign="center" sx={{ color: '#737373' }}>{page.name}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-
-          {/* Desktop-Menü (Rechts) */}
-          <Box
+              {page.name}
+            </Button>
+          ))}
+        </Box>
+        <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+          <Link to="/">
+            <Box
+              component="img"
+              src="src/assets/logos/Bildschirmfoto 2025-03-17 um 20.46.46.png"
+              alt="Logo"
+              sx={{ width: isSmallScreen ? '200px' : '400px', height: 'auto' }}
+            />
+          </Link>
+        </Box>
+        <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <Button
+            component={Link}
+            to="/contact"
             sx={{
-              display: { xs: 'none', md: 'flex' },
-              justifyContent: 'flex-end',
+              backgroundColor: 'transparent',
+              color: '#737373',
+              '&:hover': { backgroundColor: '#85ab7f', color: '#fff' },
             }}
+          >
+            Termin vereinbaren
+          </Button>
+        </Box>
+        <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+          <IconButton onClick={handleOpenNavMenu}>
+            <MenuIcon sx={{ color: '#383838' }} />
+          </IconButton>
+          <Menu
+            anchorEl={anchorElNav}
+            open={Boolean(anchorElNav)}
+            onClose={handleCloseNavMenu}
+            sx={{ '& .MuiPaper-root': { backgroundColor: '#fbfbfb' } }}
           >
             {pages.map((page) => (
-              <Button
+              <MenuItem
                 key={page.name}
                 onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  color: '#383838',
-                  display: 'block',
-                  margin: '0 1rem',
-                  '&:hover': {
-                    backgroundColor: '#dddddd',
-                  },
-                }}
                 component={Link}
                 to={page.path}
               >
-                {page.name}
-              </Button>
+                <Typography textAlign="center">{page.name}</Typography>
+              </MenuItem>
             ))}
-          </Box>
-        </Toolbar>
-      </Box>
+            <MenuItem onClick={handleCloseNavMenu} component={Link} to="/contact">
+              <Typography textAlign="center" sx={{ fontWeight: 'bold', color: '#383838' }}>
+                Termin vereinbaren
+              </Typography>
+            </MenuItem>
+          </Menu>
+        </Box>
+      </Toolbar>
     </AppBar>
   );
 }

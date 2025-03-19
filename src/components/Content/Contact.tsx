@@ -1,14 +1,19 @@
 import React from 'react';
 import {
   Box,
-  Grid,
   Typography,
   Button,
   TextField,
   Stack,
-  Link as MuiLink, Container,
+  Link as MuiLink,
+  Container,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import Grid2 from '@mui/material/Grid2';
+
+const CleanGrid = styled(Grid2, {
+  shouldForwardProp: (prop) => prop !== 'item',
+})({});
 
 const FormBox = styled('form')(({ theme }) => ({
   display: 'flex',
@@ -17,28 +22,75 @@ const FormBox = styled('form')(({ theme }) => ({
 }));
 
 function MainContactFullWidth() {
-  const currentYear = new Date().getFullYear();
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Hier kann deine Form-Submit-Logik rein (z.B. Ajax-Call o.Ä.)
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      message: formData.get('message'),
+    };
+
+    try {
+      const response = await fetch('http://localhost:5100/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json();
+      if (result.success) {
+        console.log('E-Mail wurde erfolgreich gesendet.');
+      } else {
+        console.error('Fehler beim Senden der E-Mail.');
+      }
+    } catch (error) {
+      console.error('Netzwerkfehler oder Server nicht erreichbar:', error);
+    }
+  };
+
+  const textFieldSx = {
+    "& label.Mui-focused": {
+      color: "#85ab7f",
+    },
+    "& .MuiOutlinedInput-root": {
+      "&.Mui-focused fieldset": {
+        borderColor: "#85ab7f",
+      },
+    },
   };
 
   return (
-    <Container maxWidth={"xl"}>
+    <Container maxWidth="xl" sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      textAlign: 'start',
+      backgroundColor: '#efeeee',
+      p: { xs: 2, sm: 4 },
+    }}>
       <Box
         sx={{
           px: { xs: 4, md: 4 },
           py: { xs: 4, md: 4 },
+          color: '#383838',
+          width: '80%',
+          justifyContent: 'center',
         }}
       >
-        <Grid container spacing={4}
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignContent: 'center',
-              }}>
-          <Grid item xs={12} md={8}>
+        <CleanGrid
+          container
+          spacing={4}
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignContent: 'center',
+          }}
+        >
+          <CleanGrid>
             <Box sx={{ mb: 4 }}>
               <Typography variant="h4" gutterBottom>
                 Kontakt
@@ -46,77 +98,92 @@ function MainContactFullWidth() {
               <Typography>
                 Haben Sie auf meiner Seite das für Sie passende Angebot gefunden, dann kontaktieren Sie mich gerne.
               </Typography>
-              <Typography sx={{ display: 'flex', flexDirection: 'column', marginBottom: '8px', marginTop: '8px' }}>
-                Telefonisch erreichen Sie mich persönlich zu meinen Sprechzeiten.<br />
-                Diese sind wie folgt:
-                <Box
-                  component="span"
-                  sx={{ display: 'inline-block' , marginTop: '8px' }}
-                >
-                  <Box><strong>Montag:</strong> 12 - 13 Uhr</Box>
-                  <Box><strong>Dienstag:</strong> 12 - 13 Uhr</Box>
-                  <Box><strong>Freitag:</strong> 12 - 13 Uhr</Box>
+              <Typography
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  mb: '8px',
+                  mt: '8px',
+                }}
+              >
+                Telefonisch erreichen Sie mich persönlich zu meinen Sprechzeiten. Diese sind wie folgt:
+                <Box />
+                <Box sx={{ display: 'flex', mt: '8px', gap: 2 }}>
+                  <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                    Montag: 12 - 13 Uhr
+                  </Typography>
+                  <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                    Dienstag: 12 - 13 Uhr
+                  </Typography>
+                  <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                    Freitag: 12 - 13 Uhr
+                  </Typography>
                 </Box>
-                <br />
-                Hinterlassen Sie mir anderenfalls gerne eine Nachricht auf meiner Mailbox, ich rufe Sie dann zeitnah
-                zurück.
+                <Box />
+                Hinterlassen Sie mir anderenfalls gerne eine Nachricht auf meiner Mailbox, ich rufe Sie dann zeitnah zurück.
               </Typography>
               <Typography>Ich freue mich auf Sie.</Typography>
             </Box>
 
             <Box sx={{ mb: 4 }}>
-              <FormBox
-                action="/form/submit.php"
-                method="post"
-                id="contactform"
-                onSubmit={handleSubmit}
-              >
+              <FormBox id="contactform" onSubmit={handleSubmit}>
                 <TextField
-                  label="Ihr Name*"
+                  label="Ihr Name"
                   name="name"
                   required
                   fullWidth
+                  sx={textFieldSx}
                 />
                 <TextField
-                  label="Ihre E-Mail-Adresse*"
+                  label="Ihre E-Mail-Adresse"
                   name="email"
                   type="email"
                   required
                   fullWidth
+                  sx={textFieldSx}
                 />
                 <TextField
-                  label="Ihre Nachricht*"
+                  label="Ihre Nachricht"
                   name="message"
                   required
                   multiline
                   rows={5}
                   fullWidth
+                  sx={textFieldSx}
                 />
 
                 <Stack direction="row" spacing={2} justifyContent="flex-end">
-                  <Button type="reset" variant="outlined">
+                  <Button
+                    type="reset"
+                    sx={{
+                      backgroundColor: 'transparent',
+                      color: '#383838',
+                      '&:hover': { backgroundColor: '#85ab7f', color: '#fff' },
+                    }}
+                  >
                     Zurücksetzen
                   </Button>
                   <Button
                     type="submit"
-                    variant="contained"
                     color="primary"
+                    sx={{
+                      backgroundColor: 'transparent',
+                      color: '#383838',
+                      '&:hover': { backgroundColor: '#85ab7f', color: '#fff' },
+                    }}
                   >
                     Absenden
                   </Button>
                 </Stack>
-
-                <Box>
+                <Box sx={{ display: 'flex' }}>
                   <Typography variant="caption">
-                    *Pflichtfelder<br />
+                    *Pflichtfelder
                     Bitte beachten Sie unsere Hinweise zum{' '}
-                    <MuiLink href="/datenschutz" target="_blank" underline="none">
+                    <MuiLink href="/policy" target="_blank" underline="none">
                       Datenschutz
                     </MuiLink>.
                   </Typography>
                 </Box>
-
-                <input name="date" type="hidden" value={currentYear} />
               </FormBox>
             </Box>
 
@@ -125,75 +192,74 @@ function MainContactFullWidth() {
                 Standort
               </Typography>
               <Typography>
-                Meine Praxis befindet sich an der Ecke Beckergrube - Breite Straße in unmittelbarer Nachbarschaft der
-                Fußgängerzone Lübeck ...
+                Meine Praxis befindet sich an der Ecke Beckergrube - Breite Straße in unmittelbarer Nachbarschaft der Fußgängerzone Lübeck
               </Typography>
               <Typography variant="h6" gutterBottom mt={2}>
                 Anreise mit dem Bus
               </Typography>
+              <Typography fontWeight={600}>
+                Für die Anreise mit dem öffentlichen Nahverkehr könnten folgende Informationen hilfreich sein. Da die Haltestelle Beckergrube wegen Bauarbeiten über einen längeren Zeitraum gesperrt ist, nutzen Sie die unten stehenden Haltestelleninformationen.
+              </Typography>
               <Typography>
-                <strong>
-                  Für die Anreise mit dem öffentlichen Nahverkehr könnten folgende Informationen hilfreich sein...
-                </strong>
-                <br /><br />
-                Aus Richtung Bahnhof fahren Sie mit der Linie 5 bis zur Haltestelle Wahmstraße ...
-                <br /><br />
-                Alternativ fahren Sie mit den Linien 3, 10, 11, 21, 30, 32, 39, 40 bis zur Haltestelle Katharineum ...
-                <br /><br />
-                Aus Richtung Gustav-Radbruch-Platz nutzen Sie den eingerichteten Shuttle ...
+                Aus Richtung Bahnhof fahren Sie mit der Linie 5 bis zur Haltestelle Wahmstraße und durchqueren die Fußgängerzone Breite Straße bis zur Beckergrube, ca. 10 Minuten Fußweg.
+                Alternativ fahren Sie mit den Linien 3, 10, 11, 21, 30, 32, 39, 40 bis zur Haltestelle Katharineum und gelangen durch die Pfaffenstraße zur Beckergrube, ca. 5 Minuten Fußweg.
+                Aus Richtung Gustav-Radbruch-Platz nutzen Sie den eingerichteten Shuttle am Bussteig 3 und fahren bis zur Haltestelle Breitestraße, ca. 2 Minuten Fußweg.
+                Oder Sie fahren mit den Linien 3, 5, 10, 11, 12, 21, 30, 31, 32, 39, 40 bis zur Haltestelle Wahmstraße, den Linien 1, 2, 3, 5, 6, 7, 9, 10, 10, 12, 15, 16, 21, 30, 31, 32, 39, 40 bis zur Haltestelle Kohlmarkt oder den Linien 1, 2, 4, 6, 7, 9, 15, 16, 17 bis zur Haltestelle Sandstraße. Von der jeweiligen Haltestelle gehen Sie durch die Fußgängerzone Breite Straße bis zur Beckergrube, ca. 10 bis 12 Minuten Fußweg.
               </Typography>
 
               <Typography variant="h6" gutterBottom mt={2}>
                 Anfahrt mit dem Auto
               </Typography>
               <Typography>
-                Für die Anreise mit dem Auto gibt es an der Musik und Kongresshalle (MUK) Parkplätze ...
-                <br />
+                Für die Anreise mit dem Auto gibt es an der Musik und Kongresshalle (MUK) Parkplätze, ca. 10 Minuten Fußweg.
                 Weitere Parkmöglichkeiten finden sich in den Parkhäusern der Innenstadt.
-                <br />
-                Es befinden sich Behindertenparkplätze gegenüber der Sparkasse in der Breite Straße, ca. 1 Minute
-                Fußweg.
+                Es befinden sich Behindertenparkplätze gegenüber der Sparkasse in der Breite Straße, ca. 1 Minute Fußweg.
               </Typography>
             </Box>
-          </Grid>
+          </CleanGrid>
 
-          <Grid item xs={12} md={4}>
-            <Box
-              sx={{
-                borderRadius: 1,
-                height: '100%',
-              }}
-            >
-              <Typography variant="h6" gutterBottom>
-                Paulina Tolk
+          <CleanGrid>
+            <Box sx={{ borderRadius: 1, height: '100%' }}>
+                <Typography>M.Sc. Psych., HP Psych. Paulina Tolk</Typography>
+                <Typography>Systemische Therapeutin und Beraterin (SG)</Typography>
+                <Typography>Praxis für Psychotherapie</Typography>
+                <Typography>Heilpraktikerin für Psychotherapie</Typography>
+                <Typography>Beckergrube 2</Typography>
+                <Typography>23552 Lübeck</Typography>
+              <Box></Box>
+              <Typography>
+                Mobil:{" "}
+                <MuiLink
+                  href="tel:017643608599"
+                  underline="none"
+                  sx={{
+                    backgroundColor: 'transparent',
+                    color: '#383838',
+                    fontWeight: 300,
+                    '&:hover': { color: '#85ab7f' },
+                  }}
+                >
+                  0176 43 60 85 99
+                </MuiLink>
               </Typography>
               <Typography>
-                Heilpraktikerin für Psychotherapie
-                Systemische Therapie und Beratung<br />
-                Paulina Tolk<br />
-                Beckergrube 2<br />
-                23552 Lübeck
-              </Typography>
-
-              <Typography>
-                <Box>
-                  <Box>
-                    <strong>Mobil: </strong>
-                    <MuiLink href="tel:017643608599" underline="none">
-                      0176 43 60 85 99
-                    </MuiLink>
-                  </Box>
-                  <Box>
-                    <strong>E-Mail: </strong>
-                    <MuiLink href="mailto:info@paulinatolk.de" underline="none">
-                      info@paulinatolk.de
-                    </MuiLink>
-                  </Box>
-                </Box>
+                E-Mail{" "}
+                <MuiLink
+                  href="mailto:info@paulinatolk.de"
+                  underline="none"
+                  sx={{
+                    backgroundColor: 'transparent',
+                    color: '#383838',
+                    fontWeight: 300,
+                    '&:hover': { color: '#85ab7f' },
+                  }}
+                >
+                  therapie.tolk@gmail.com
+                </MuiLink>
               </Typography>
             </Box>
-          </Grid>
-        </Grid>
+          </CleanGrid>
+        </CleanGrid>
       </Box>
     </Container>
   );

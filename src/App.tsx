@@ -1,28 +1,26 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import MainPoints from './components/Content/MainPoints.tsx';
 import Impressum from './components/Content/Impressum';
 import Content from './components/Content/Content';
-import Offers from './components/Content/Offers.tsx';
+import Vita from './components/Content/Vita.tsx';
 import Contact from './components/Content/Contact.tsx';
 import Footer from './components/Footer/Footer.tsx';
 import Navbar from './components/Navbar/Navbar';
-import { Box, Divider } from '@mui/material';
+import Policy from './components/Content/Policy.tsx';
+import Overview from './components/Content/Overview.tsx';
 
 function App() {
   return (
     <Router>
       <Navbar />
-      <Divider sx={{ color: '#85ab7f'}} />
-      <Box sx={{ marginTop: 1 }} />
       <Routes>
         <Route path="/" element={<Content />} />
-        <Route path="/mainPoints" element={<MainPoints />} />
-        <Route path="/offers" element={<Offers />} />
+        <Route path="/overview" element={<Overview />} />
+        <Route path="/vita" element={<Vita />} />
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/content" element={<Content />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/policy" element={<Policy />} />
       </Routes>
-      <Divider sx={{ color: '#85ab7f'}} />
       <Footer />
     </Router>
   );

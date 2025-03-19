@@ -1,4 +1,56 @@
-import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Typography, useTheme, useMediaQuery } from '@mui/material';
+import { Psychology, Favorite, SelfImprovement, SupportAgent, Pages } from '@mui/icons-material';
+import { styled } from '@mui/material/styles';
+import Grid2 from '@mui/material/Grid2';
+
+const services = [
+  {
+    title: 'Psychotherapie',
+    description:
+      'In der Psychotherapie lernen Sie, effektive Bewältigungsstrategien zu entwickeln, um mit Stress und emotionalen Belastungen umzugehen. Unsere Ansätze helfen Ihnen, tief verwurzelte Verhaltensmuster zu erkennen und langfristig mehr innere Ruhe sowie Stabilität zu erreichen.',
+    icon: <Psychology fontSize="large" color="primary" />,
+  },
+  {
+    title: 'Paartherapie',
+    description:
+      'Die Paartherapie bietet Ihnen einen sicheren Raum, um Kommunikationsprobleme zu identifizieren und gemeinsam nachhaltige Lösungen zu erarbeiten. Durch professionelle Unterstützung können Sie Ihre Beziehung stärken und langfristige Harmonie erreichen.',
+    icon: <Favorite fontSize="large" color="secondary" />,
+  },
+  {
+    title: 'Persönlichkeitsentwicklung',
+    description:
+      'Unsere Angebote zur Persönlichkeitsentwicklung fördern Ihre individuelle Entfaltung und unterstützen Sie dabei, Ihr Selbstbewusstsein nachhaltig zu stärken. Entdecken Sie Ihre Potenziale und lernen Sie, diese gezielt für Ihre persönliche Weiterentwicklung einzusetzen.',
+    icon: <SelfImprovement fontSize="large" color="success" />,
+  },
+  {
+    title: 'Angstbewältigung',
+    description:
+      'In unseren Sitzungen zur Angstbewältigung unterstützen wir Sie dabei, Ängste systematisch zu verstehen und zu reduzieren. Erfahren Sie, wie Sie Unsicherheiten überwinden und wieder mehr Lebensfreude sowie Selbstvertrauen gewinnen können.',
+    icon: <SupportAgent fontSize="large" color="warning" />,
+  },
+  {
+    title: 'Familientherapie',
+    description:
+      'Die Familientherapie unterstützt Familien dabei, bestehende Konflikte offen anzusprechen und gemeinsam konstruktive Lösungsansätze zu entwickeln. Fördern Sie eine harmonische Kommunikation und ein respektvolles Miteinander in Ihrem familiären Umfeld.',
+    icon: <Pages fontSize="large" color="warning" />,
+  },
+];
+
+const ServiceBox = styled(Box)({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
+  justifyContent: 'center',
+  height: '300px',
+  width: '80%',
+  padding: '20px',
+  boxSizing: 'border-box',
+  margin: '0 auto',
+});
+
+const CleanGrid = styled(Grid2, {
+  shouldForwardProp: (prop) => prop !== 'item',
+})({});
 
 const Content = () => {
   const theme = useTheme();
@@ -9,40 +61,57 @@ const Content = () => {
       <Box
         sx={{
           position: 'relative',
-          backgroundImage: 'url(src/assets/logos/istockphoto-2158576842-1024x1024.jpg)',
-          backgroundSize: 'cover',
-          minHeight: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          mt: { xs: 4, sm: 8 },
+          mb: { xs: 4, sm: 8 },
+          px: { xs: 2, sm: 4 },
         }}
-      />
-      <Box sx={{ px: isSmallScreen ? 2 : 10, py: 5, maxWidth: isSmallScreen ? '900px' : 'none', mx: isSmallScreen ? 'auto' : 'none' }}>
-        <Typography variant="h3" gutterBottom align={isSmallScreen ? 'center' : 'left'}>
-          Über mich
+      >
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          textAlign: 'center',
+          backgroundColor: '#efeeee',
+          width: { xs: '90%', sm: '70%' },
+          p: { xs: 2, sm: 4 },
+        }}
+      >
+        <Typography variant={isSmallScreen ? 'h5' : 'h3'} fontWeight={300}>
+          „Verstehen kann man das Leben nur rückwärts. Leben muss man es vorwärts.“
         </Typography>
-        <Typography variant="h6">
-          Mein Name ist Paulina Tolk und ich bin Psychologin mit einem Master of Science in Klinischer- und Gesundheitspsychologie
-          der Freien Universität Berlin. Schon während meines Studiums habe ich mich intensiv mit der Erforschung psychologischer Prozesse beschäftigt,
-          insbesondere mit der psychometrischen Überprüfung der Pain Catastrophizing Scale for Children (PCS-C), welche Thema meiner Masterarbeit war.
+        <Typography variant="h6" mt={2} fontWeight={100}>
+          - Søren Kierkegaard
         </Typography>
-        <Typography variant="h6">
-          Meine berufliche Leidenschaft liegt in der psychotherapeutischen Arbeit, insbesondere in der Verhaltenstherapie, der Klinischen Hypnose und
-          der Systemischen Therapie. Durch verschiedene Weiterbildungen und praktische Tätigkeiten habe ich meine therapeutischen Fähigkeiten
-          stetig weiterentwickelt. Derzeit absolviere ich eine Ausbildung zur Verhaltenstherapeutin am BFA Berlin und arbeite in einer psychotherapeutischen Praxis,
-          wo ich Verhaltenstherapie, Klinische Hypnose und Systemische Paartherapie anwende.
+      </Box>
+      </Box>
+      <Box sx={{ py: { xs: 4, sm: 8 }, textAlign: 'center' }}>
+        <Typography variant="h4" fontWeight={400} gutterBottom>
+          Meine Leistungen
         </Typography>
-        <Typography variant="h6">
-          Neben meiner praktischen Tätigkeit habe ich wertvolle Erfahrungen in der psychologischen Betreuung psychisch kranker Menschen gesammelt,
-          sowohl in ambulanten Wohngruppen als auch in der Forschungsarbeit zur Schmerzreduktion durch Klinische Hypnose. Meine Arbeit ist geprägt von Empathie,
-          wissenschaftlicher Fundierung und einem ganzheitlichen Ansatz zur psychischen Gesundheit.
+        <Typography variant="subtitle1" color="textSecondary" mb={4} fontWeight={200}>
+          Individuelle psychologische Beratung für Ihr Wohlbefinden – von Therapie bis Persönlichkeitsentwicklung.
         </Typography>
-        <Typography variant="h6">
-          Ich bin dreisprachig aufgewachsen und spreche fließend Deutsch, Polnisch und Englisch, was mir ermöglicht, in verschiedenen kulturellen Kontexten zu arbeiten.
-          Zudem nutze ich moderne technologische Hilfsmittel, um meine Arbeit effizient zu gestalten. Durch meine Sehbehinderung habe ich eine besondere Sensibilität für die Herausforderungen
-          und Stärken von Menschen mit besonderen Bedürfnissen entwickelt und setze mich aktiv für Vielfalt und Inklusion ein.
-        </Typography>
-        <Typography variant="h6">
-          Mein Ziel ist es, Menschen auf ihrem individuellen Weg zur psychischen Gesundheit zu begleiten und ihnen durch wissenschaftlich fundierte Methoden
-          nachhaltige Unterstützung zu bieten.
-        </Typography>
+
+        <Grid2 container spacing={2} sx={{ margin: 0, width: '100%', justifyContent: 'center' }}>
+          {services.map((service, index) => (
+            <CleanGrid key={index}>
+              <ServiceBox sx={{ height: isSmallScreen ? '300px' : '200px' }}>
+                <Box sx={{ flex: '1', textAlign: 'center' }}>
+                  <Typography variant="h6" fontWeight={400}>{service.title}</Typography>
+                </Box>
+                <Box sx={{ flex: '2', textAlign: 'start' }}>
+                  <Typography variant="body1" fontWeight={200}>{service.description}</Typography>
+                </Box>
+              </ServiceBox>
+            </CleanGrid>
+          ))}
+        </Grid2>
       </Box>
     </>
   );
