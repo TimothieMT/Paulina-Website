@@ -26,7 +26,7 @@ const Footer = () => {
                 <Link href="/#">
                   <Box
                     component="img"
-                    src="src/assets/Logo.png"
+                    src="/Logo.png"
                     alt="Logo"
                     sx={{ width: isSmallScreen ? '200px' : '300px', height: 'auto' }}
                   />
