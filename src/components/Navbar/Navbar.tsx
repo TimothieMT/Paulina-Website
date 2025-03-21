@@ -67,7 +67,7 @@ function Navbar() {
           <Link to="/">
             <Box
               component="img"
-              src="src/assets/logos/Bildschirmfoto 2025-03-17 um 20.46.46.png"
+              src="src/assets/logos/Logo.png"
               alt="Logo"
               sx={{ width: isSmallScreen ? '200px' : '400px', height: 'auto' }}
             />
