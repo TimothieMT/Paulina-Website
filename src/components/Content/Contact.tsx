@@ -52,10 +52,16 @@ function MainContactFullWidth() {
   };
 
   const textFieldSx = {
+    "&:hover label": {
+      color: "#85ab7f",
+    },
     "& label.Mui-focused": {
       color: "#85ab7f",
     },
     "& .MuiOutlinedInput-root": {
+      "&:hover .MuiOutlinedInput-notchedOutline": {
+        borderColor: "#85ab7f",
+      },
       "&.Mui-focused fieldset": {
         borderColor: "#85ab7f",
       },
@@ -63,15 +69,18 @@ function MainContactFullWidth() {
   };
 
   return (
-    <Container maxWidth="xl" sx={{
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      textAlign: 'start',
-      backgroundColor: '#efeeee',
-      p: { xs: 2, sm: 4 },
-    }}>
+    <Container
+      maxWidth="xl"
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'start',
+        backgroundColor: '#efeeee',
+        p: { xs: 2, sm: 4 },
+      }}
+    >
       <Box
         sx={{
           px: { xs: 4, md: 4 },
@@ -92,7 +101,7 @@ function MainContactFullWidth() {
         >
           <CleanGrid>
             <Box sx={{ mb: 4 }}>
-              <Typography variant="h4" gutterBottom>
+              <Typography variant="h5" gutterBottom>
                 Kontakt
               </Typography>
               <Typography>
@@ -109,13 +118,13 @@ function MainContactFullWidth() {
                 Telefonisch erreichen Sie mich persönlich zu meinen Sprechzeiten. Diese sind wie folgt:
                 <Box />
                 <Box sx={{ display: 'flex', mt: '8px', gap: 2 }}>
-                  <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                  <Typography variant="subtitle1">
                     Montag: 12 - 13 Uhr
                   </Typography>
-                  <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                  <Typography variant="subtitle1">
                     Dienstag: 12 - 13 Uhr
                   </Typography>
-                  <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                  <Typography variant="subtitle1">
                     Freitag: 12 - 13 Uhr
                   </Typography>
                 </Box>
@@ -154,16 +163,6 @@ function MainContactFullWidth() {
 
                 <Stack direction="row" spacing={2} justifyContent="flex-end">
                   <Button
-                    type="reset"
-                    sx={{
-                      backgroundColor: 'transparent',
-                      color: '#383838',
-                      '&:hover': { backgroundColor: '#85ab7f', color: '#fff' },
-                    }}
-                  >
-                    Zurücksetzen
-                  </Button>
-                  <Button
                     type="submit"
                     color="primary"
                     sx={{
@@ -188,7 +187,7 @@ function MainContactFullWidth() {
             </Box>
 
             <Box sx={{ mb: 4 }}>
-              <Typography variant="h5" gutterBottom>
+              <Typography variant="h6" gutterBottom>
                 Standort
               </Typography>
               <Typography>
@@ -197,7 +196,7 @@ function MainContactFullWidth() {
               <Typography variant="h6" gutterBottom mt={2}>
                 Anreise mit dem Bus
               </Typography>
-              <Typography fontWeight={600}>
+              <Typography>
                 Für die Anreise mit dem öffentlichen Nahverkehr könnten folgende Informationen hilfreich sein. Da die Haltestelle Beckergrube wegen Bauarbeiten über einen längeren Zeitraum gesperrt ist, nutzen Sie die unten stehenden Haltestelleninformationen.
               </Typography>
               <Typography>
@@ -220,22 +219,20 @@ function MainContactFullWidth() {
 
           <CleanGrid>
             <Box sx={{ borderRadius: 1, height: '100%' }}>
-                <Typography>M.Sc. Psych., HP Psych. Paulina Tolk</Typography>
-                <Typography>Systemische Therapeutin und Beraterin (SG)</Typography>
-                <Typography>Praxis für Psychotherapie</Typography>
-                <Typography>Heilpraktikerin für Psychotherapie</Typography>
-                <Typography>Beckergrube 2</Typography>
-                <Typography>23552 Lübeck</Typography>
-              <Box></Box>
+              <Typography>M.Sc. Psych., HP Psych. Paulina Tolk</Typography>
+              <Typography>Systemische Therapeutin und Beraterin (SG)</Typography>
+              <Typography>Praxis für Psychotherapie</Typography>
+              <Typography>Beckergrube 2</Typography>
+              <Typography>23552 Lübeck</Typography>
+              <Box />
               <Typography>
-                Mobil:{" "}
+                Mobil:{' '}
                 <MuiLink
                   href="tel:017643608599"
                   underline="none"
                   sx={{
                     backgroundColor: 'transparent',
                     color: '#383838',
-                    fontWeight: 300,
                     '&:hover': { color: '#85ab7f' },
                   }}
                 >
@@ -243,14 +240,13 @@ function MainContactFullWidth() {
                 </MuiLink>
               </Typography>
               <Typography>
-                E-Mail{" "}
+                E-Mail{' '}
                 <MuiLink
                   href="mailto:info@paulinatolk.de"
                   underline="none"
                   sx={{
                     backgroundColor: 'transparent',
                     color: '#383838',
-                    fontWeight: 300,
                     '&:hover': { color: '#85ab7f' },
                   }}
                 >

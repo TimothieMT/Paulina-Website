@@ -1,26 +1,33 @@
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 const Vita = () => {
   return (
-    <Container maxWidth="md" sx={{
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'start',
-      textAlign: 'start',
-      p: { xs: 2, sm: 4 },
-      marginBottom: '60px',
-    }}>
+    <Box
+      sx={{
+        position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        mt: { xs: 4, sm: 8 },
+        mb: { xs: 4, sm: 8 },
+        px: { xs: 2, sm: 4 },
+      }}
+    >
       <Box
         sx={{
-          px: { xs: 2, md: 4 },
-          py: { xs: 2, md: 4 },
-          color: '#383838',
-          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'flex-start',
+          textAlign: 'flex-start',
+          backgroundColor: '#efeeee',
+          width: { xs: '90%', sm: '70%' },
+          p: { xs: 2, sm: 4 },
         }}
       >
-        <Typography variant="h4" gutterBottom sx={{ fontWeight: 500, textTransform: 'uppercase' }}>
-          Vita
+        <Typography variant="h5" gutterBottom sx={{ fontWeight: 500, textTransform: 'uppercase' }}>
+          Werdegang und Qualifikationen
         </Typography>
 
         <Typography sx={{ mt: 5 , fontWeight: 300 }}>Seit 2023: Ausbildung zur Verhaltenstherapeutin (BFA Berlin) mit Schwerpunkt auf Einzel- und Gruppentherapie.</Typography>
@@ -64,7 +71,7 @@ const Vita = () => {
           In meiner Arbeit lege ich großen Wert auf eine individuelle und wertschätzende Begleitung. Mein Ansatz kombiniert wissenschaftlich fundierte Methoden der Verhaltenstherapie mit Elementen der systemischen Beratung und Hypnotherapie. Ich glaube daran, dass jeder Mensch über Ressourcen verfügt, die ihm helfen können, schwierige Lebensphasen zu bewältigen. Gemeinsam erarbeiten wir nachhaltige Lösungen, die Ihre persönliche Entwicklung und psychische Gesundheit stärken.
         </Typography>
       </Box>
-    </Container>
+    </Box>
   );
 };
 

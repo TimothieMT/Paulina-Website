@@ -18,7 +18,7 @@ const Footer = () => {
           container
           justifyContent="space-between"
           alignItems="center"
-          direction={{ xs: 'column', md: 'row' }}
+          direction= "row"
         >
           <CleanGrid>
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: { xs: 'center', md: 'flex-start' } }}>
@@ -28,7 +28,7 @@ const Footer = () => {
                     component="img"
                     src="/Logo.png"
                     alt="Logo"
-                    sx={{ width: isSmallScreen ? '200px' : '300px', height: 'auto' }}
+                    sx={{ width: isSmallScreen ? '150px' : '300px', height: 'auto' }}
                   />
                 </Link>
               </Box>

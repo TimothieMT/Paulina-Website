@@ -1,28 +1,33 @@
 import {
   Box,
-  Container,
   Typography,
   Link as MuiLink,
 } from '@mui/material';
 
 const Impressum = () => {
   return (
-    <Container maxWidth="xl" sx={{
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      textAlign: 'start',
-      backgroundColor: '#efeeee',
-      p: { xs: 2, sm: 4 },
-    }}>
+    <Box
+      sx={{
+        position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        mt: { xs: 4, sm: 8 },
+        mb: { xs: 4, sm: 8 },
+        px: { xs: 2, sm: 4 },
+      }}
+    >
       <Box
         sx={{
-          px: { xs: 4, md: 4 },
-          py: { xs: 4, md: 4 },
-          color: '#383838',
-          width: '80%',
+          display: 'flex',
+          flexDirection: 'column',
           justifyContent: 'center',
+          alignItems: 'flex-start',
+          textAlign: 'flex-start',
+          backgroundColor: '#efeeee',
+          width: { xs: '90%', sm: '70%' },
+          p: { xs: 2, sm: 4 },
         }}
       >
         <Typography variant="h4" gutterBottom>
@@ -34,7 +39,6 @@ const Impressum = () => {
               <Typography>M.Sc. Psych., HP Psych. Paulina Tolk</Typography>
               <Typography>Systemische Therapeutin und Beraterin (SG)</Typography>
               <Typography>Praxis für Psychotherapie</Typography>
-              <Typography>Heilpraktikerin für Psychotherapie</Typography>
               <Typography>Beckergrube 2</Typography>
               <Typography>23552 Lübeck</Typography>
               <Box></Box>
@@ -75,7 +79,6 @@ const Impressum = () => {
           <Typography>M.Sc. Psych., HP Psych. Paulina Tolk</Typography>
           <Typography>Systemische Therapeutin und Beraterin (SG)</Typography>
           <Typography>Praxis für Psychotherapie</Typography>
-          <Typography>Heilpraktikerin für Psychotherapie</Typography>
           <Typography>Beckergrube 2</Typography>
           <Typography>23552 Lübeck</Typography>
         <Box height={20}></Box>
@@ -143,7 +146,7 @@ const Impressum = () => {
         </Typography>
 
       </Box>
-    </Container>
+    </Box>
   );
 };
 

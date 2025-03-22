@@ -13,7 +13,8 @@ import { useMediaQuery, useTheme } from '@mui/material';
 
 const pages = [
   { name: 'Kostenübersicht', path: '/overview' },
-  { name: 'Vita', path: '/vita' },
+  { name: 'Werdegang', path: '/vita' },
+  { name: 'Leistungen', path: '/service' },
 ];
 
 function Navbar() {
@@ -36,7 +37,7 @@ function Navbar() {
         background: '#efeeee',
         boxShadow: 'none',
         borderBottom: 'none',
-        marginBottom: '80px',
+        marginBottom: '40px',
       }}
     >
       <Toolbar
@@ -44,7 +45,7 @@ function Navbar() {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          flexDirection: isSmallScreen ? 'column' : 'row',
+          flexDirection: 'row',
         }}
       >
         <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3 }}>
@@ -56,7 +57,7 @@ function Navbar() {
               sx={{
                 backgroundColor: 'transparent',
                 color: '#737373',
-                '&:hover': { backgroundColor: '#85ab7f', color: '#fff' },
+                '&:hover': { backgroundColor: '#85ab7f', color: '#efeeee' },
               }}
             >
               {page.name}
@@ -69,7 +70,7 @@ function Navbar() {
               component="img"
               src="/Logo.png"
               alt="Logo"
-              sx={{ width: isSmallScreen ? '200px' : '400px', height: 'auto' }}
+              sx={{ width: isSmallScreen ? '300px' : '400px', height: 'auto' }}
             />
           </Link>
         </Box>
@@ -80,7 +81,7 @@ function Navbar() {
             sx={{
               backgroundColor: 'transparent',
               color: '#737373',
-              '&:hover': { backgroundColor: '#85ab7f', color: '#fff' },
+              '&:hover': { backgroundColor: '#85ab7f', color: '#efeeee' },
             }}
           >
             Termin vereinbaren
@@ -94,7 +95,7 @@ function Navbar() {
             anchorEl={anchorElNav}
             open={Boolean(anchorElNav)}
             onClose={handleCloseNavMenu}
-            sx={{ '& .MuiPaper-root': { backgroundColor: '#fbfbfb' } }}
+            sx={{ '& .MuiPaper-root': { backgroundColor: '#efeeee' } }}
           >
             {pages.map((page) => (
               <MenuItem
