@@ -1,5 +1,5 @@
-import { Box, Typography} from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { Helmet } from 'react-helmet';
+import { Box, Container, Typography } from '@mui/material';
 import Grid2 from '@mui/material/Grid2';
 
 const services = [
@@ -30,62 +30,78 @@ const services = [
   },
 ];
 
-
-
-const CleanGrid = styled(Grid2, {
-  shouldForwardProp: (prop) => prop !== 'item',
-})({});
-
 const Service = () => {
-
   return (
-    <Box
-      sx={{
-        position: 'relative',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        mt: { xs: 4, sm: 8 },
-        mb: { xs: 4, sm: 8 },
-        px: { xs: 2, sm: 4 },
-      }}
-    >
+    <>
+      <Helmet>
+        <title>Meine Leistungen – Psychotherapie in Lübeck | Paulina Tolk</title>
+        <meta
+          name="description"
+          content="Entdecken Sie unsere individuellen psychotherapeutischen Leistungen: Psychotherapie, Paartherapie, Persönlichkeitsentwicklung, Angstbewältigung und Familientherapie in Lübeck."
+        />
+      </Helmet>
       <Box
+        component="section"
+        aria-labelledby="services-heading"
         sx={{
+          position: 'relative',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          alignItems: 'flex-start',
-          textAlign: 'flex-start',
-          backgroundColor: '#efeeee',
-          width: { xs: '90%', sm: '70%' },
-          p: { xs: 2, sm: 4 },
+          alignItems: 'center',
+          mt: { xs: 4, sm: 8 },
+          mb: { xs: 4, sm: 8 },
+          px: { xs: 2, sm: 4 },
         }}
       >
-      <Typography variant="h4" fontWeight={400} gutterBottom>
-        Meine Leistungen
-      </Typography>
-      <Typography variant="subtitle1" color="textSecondary" mb={4} fontWeight={200}>
-        Individuelle psychologische Beratung für Ihr Wohlbefinden – von Therapie bis Persönlichkeitsentwicklung.
-      </Typography>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'flex-start',
+            textAlign: 'left',
+            backgroundColor: '#efeeee',
+            width: { xs: '90%', sm: '70%' },
+            p: { xs: 2, sm: 4 },
+          }}
+        >
+          <Typography
+            variant="h4"
+            component="h2"
+            fontWeight={400}
+            gutterBottom
+            id="services-heading"
+          >
+            Meine Leistungen
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            component="p"
+            color="textSecondary"
+            mb={4}
+            fontWeight={200}
+          >
+            Individuelle psychologische Beratung für Ihr Wohlbefinden – von Therapie bis Persönlichkeitsentwicklung.
+          </Typography>
 
-      <Grid2>
-        {services.map((service, index) => (
-          <CleanGrid key={index}>
-            <Box>
-              <Box sx={{ flex: '1', textAlign: 'flex-start' }}>
-                <Typography variant="h6" fontWeight={400}>{service.title}</Typography>
-              </Box>
-              <Box sx={{ flex: '2', textAlign: 'flex-start', marginBottom: '40px' }}>
-                <Typography variant="body1" fontWeight={200}>{service.description}</Typography>
-              </Box>
-            </Box>
-          </CleanGrid>
-        ))}
-      </Grid2>
-    </Box>
-    </Box>
+          <Grid2 component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }}>
+            {services.map((service, index) => (
+              <Container component="li" key={index} sx={{ mb: 4 }}>
+                <Box component="article">
+                  <Typography variant="h6" component="h3" fontWeight={400}>
+                    {service.title}
+                  </Typography>
+                  <Typography variant="body1" component="p" fontWeight={200} sx={{ mt: 1 }}>
+                    {service.description}
+                  </Typography>
+                </Box>
+              </Container>
+            ))}
+          </Grid2>
+        </Box>
+      </Box>
+    </>
   );
 };
 

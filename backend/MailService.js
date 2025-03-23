@@ -5,12 +5,9 @@ const cors = require('cors');
 
 const app = express();
 
-// CORS aktivieren (für einen spezifischen Ursprung)
-//app.use(cors({ origin: 'http://localhost:5173' }));
+const password = 'G3rfl1x-22';
 
-// Alternativ: Alle Ursprünge zulassen
 app.use(cors());
-
 app.use(bodyParser.json());
 
 app.post('/api/contact', async (req, res) => {
@@ -23,24 +20,30 @@ app.post('/api/contact', async (req, res) => {
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
+      type: 'OAuth2',
       user: 'therapie.tolk@gmail.com',
-      pass: 'G3rfl1x-22',
+      clientId: '34462262647-voau7i3ti2tb2a381ea53pob3rm7jpif.apps.googleusercontent.com',
+      clientSecret: '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',
+      refreshToken: '1//044PYOyZO6LW-CgYIARAAGAQSNwF-L9IrsONVtkrqiv40_Ib1TbXDHWWtnUXiRbahP6xvo2NkO3w-PbtqKOs64Z6cOE5uO9fKkB4',
     },
   });
 
   let mailOptions = {
-    from: email,
+    from: 'therapie.tolk@gmail.com',
+    replyTo: email,
     to: 'therapie.tolk@gmail.com',
     subject: `Neue Kontaktanfrage von ${name}`,
     text: `Name: ${name}\nEmail: ${email}\n\nNachricht:\n${message}`,
   };
 
-  try {
-    await transporter.sendMail(mailOptions);
-    res.json({ success: true, message: 'E-Mail wurde erfolgreich gesendet.' });
-  } catch (error) {
-    res.status(500).json({ success: false, error: 'Fehler beim Senden der E-Mail.' });
-  }
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error('Fehler beim Senden der E-Mail:', error);
+      return res.status(500).json({ success: false, error: 'Fehler beim Senden der E-Mail.' });
+    }
+    console.log('E-Mail gesendet:', info.response);
+    return res.json({ success: true, message: 'E-Mail wurde erfolgreich gesendet.' });
+  });
 });
 
 app.listen(5100, () => {
