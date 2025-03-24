@@ -49,7 +49,7 @@ function App() {
       <CssBaseline />
     <Router>
       <Navbar />
-      <Divider sx={{ color: "#85ab7f" }}/>
+      <Divider />
       <Routes>
         <Route path="/" element={<Content />} />
         <Route path="/overview" element={<Overview />} />
@@ -60,7 +60,7 @@ function App() {
         <Route path="/policy" element={<Policy />} />
         <Route path="/service" element={<Service />} />
       </Routes>
-      <Divider sx={{ color: "#85ab7f" }}/>
+      <Divider />
       <Footer />
     </Router>
     </ThemeProvider>

@@ -69,18 +69,16 @@ const Service = () => {
           <Typography
             variant="h4"
             component="h2"
-            fontWeight={400}
             gutterBottom
             id="services-heading"
           >
-            Meine Leistungen
+            Meine angebotenen Leistungen
           </Typography>
           <Typography
             variant="subtitle1"
             component="p"
             color="textSecondary"
             mb={4}
-            fontWeight={200}
           >
             Individuelle psychologische Beratung für Ihr Wohlbefinden – von Therapie bis Persönlichkeitsentwicklung.
           </Typography>
@@ -89,10 +87,10 @@ const Service = () => {
             {services.map((service, index) => (
               <Container component="li" key={index} sx={{ mb: 4 }}>
                 <Box component="article">
-                  <Typography variant="h6" component="h3" fontWeight={400}>
+                  <Typography variant="h6" component="h3">
                     {service.title}
                   </Typography>
-                  <Typography variant="body1" component="p" fontWeight={200} sx={{ mt: 1 }}>
+                  <Typography variant="body1" component="p" sx={{ mt: 1 }}>
                     {service.description}
                   </Typography>
                 </Box>

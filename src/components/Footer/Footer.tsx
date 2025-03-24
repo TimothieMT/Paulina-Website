@@ -36,7 +36,7 @@ const Footer = () => {
                   <Box
                     component="img"
                     src="/Logo.png"
-                    alt="Logo von Therapie Paulina Tolk"
+                    alt="Das Logo zeigt mittig die Silhouette eines menschlichen Kopfes im Seitenprofil, der aus stilisierten grünen Blättern und Zweigen geformt ist und Wachstum, Gesundheit und Lebenskraft symbolisiert. Links neben der Silhouette steht das Wort „THERAPIE“ und rechts daneben „TOLK“, beide Wörter in klaren, grauen Großbuchstaben. Unterhalb des Logos befindet sich der Zusatz „SYSTEMISCHE THERAPIE“ in kleinerer, ebenfalls grauer Schrift, was auf die therapeutische Fachrichtung hinweist."
                     sx={{ width: isSmallScreen ? '150px' : '300px', height: 'auto' }}
                   />
                 </Link>

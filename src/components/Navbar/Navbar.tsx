@@ -83,7 +83,7 @@ function Navbar() {
               <Box
                 component="img"
                 src="/Logo.png"
-                alt="Therapie Paulina Tolk Logo"
+                alt="Das Logo zeigt mittig die Silhouette eines menschlichen Kopfes im Seitenprofil, der aus stilisierten grünen Blättern und Zweigen geformt ist und Wachstum, Gesundheit und Lebenskraft symbolisiert. Links neben der Silhouette steht das Wort „THERAPIE“ und rechts daneben „TOLK“, beide Wörter in klaren, grauen Großbuchstaben. Unterhalb des Logos befindet sich der Zusatz „SYSTEMISCHE THERAPIE“ in kleinerer, ebenfalls grauer Schrift, was auf die therapeutische Fachrichtung hinweist."
                 sx={{ width: isSmallScreen ? '300px' : '400px', height: 'auto' }}
               />
             </Link>
@@ -113,7 +113,7 @@ function Navbar() {
               aria-haspopup="true"
               aria-expanded={anchorElNav ? 'true' : 'false'}
             >
-              <MenuIcon sx={{ color: '#383838' }} />
+              <MenuIcon sx={{ color: '#85ab7f' }} />
             </IconButton>
             <Menu
               id="nav-menu"
