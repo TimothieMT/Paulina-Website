@@ -120,7 +120,7 @@ function Navbar() {
               anchorEl={anchorElNav}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{ '& .MuiPaper-root': { backgroundColor: '#efeeee' } }}
+              sx={{ '& .MuiPaper-root': { backgroundColor: '#85ab7f' } }}
             >
               {[
                 { name: 'Kostenübersicht', path: '/overview' },
