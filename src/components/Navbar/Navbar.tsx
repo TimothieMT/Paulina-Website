@@ -113,8 +113,8 @@ function Navbar() {
               sx={{
                 '& .MuiPaper-root': {
                   backgroundColor: '#85ab7f',
-                  width: '100vw',
-                  maxWidth: '100%',
+                  width: '93vw',
+                  maxWidth: '93%',
                   left: 0,
                   right: 0,
                 },
