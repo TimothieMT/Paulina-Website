@@ -7,7 +7,6 @@ import {
   TextField,
   Stack,
   Link as MuiLink,
-  Container,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Grid2 from '@mui/material/Grid2';
@@ -73,49 +72,67 @@ function MainContactFullWidth() {
   return (
     <>
       <Helmet>
-        <title>Kontakt – Psychotherapie Praxis Lübeck | Paulina Tolk</title>
+        <title>Kontakt – Psychotherapie Lübeck | Paulina Tolk, systemische Therapeutin</title>
         <meta
           name="description"
-          content="Kontaktieren Sie M.Sc. Psych. Paulina Tolk, systemische Therapeutin und Beraterin in Lübeck. Vereinbaren Sie jetzt einen Termin für eine individuelle Psychotherapie."
+          content="Kontaktieren Sie die Psychotherapie-Praxis Lübeck von M.Sc. Psych. Paulina Tolk, systemische Therapeutin (SG). Vereinbaren Sie unkompliziert Ihren Termin für Beratung und Therapie."
         />
-        <script type="application/ld+json">{`
-          {
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Psychotherapie Praxis Lübeck",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Beckergrube 2",
-              "addressLocality": "Lübeck",
-              "postalCode": "23552",
-              "addressCountry": "DE"
-            },
-            "telephone": "0176 43 60 85 99",
-            "email": "therapie.tolk@gmail.com"
-          }
-        `}</script>
+        <meta
+          name="keywords"
+          content="Psychotherapie Lübeck, systemische Therapeutin Lübeck, Paulina Tolk, Kontakt Psychotherapie, Therapie Lübeck, Beratung Lübeck"
+        />
+        <script type="application/ld+json">
+          {`
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Psychotherapie Praxis Lübeck – Paulina Tolk",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Beckergrube 2",
+          "addressLocality": "Lübeck",
+          "postalCode": "23552",
+          "addressCountry": "DE"
+        },
+        "telephone": "+4917643608599",
+        "email": "therapie.tolk@gmail.com",
+        "openingHours": [
+          "Mo 12:00-13:00",
+          "Tu 12:00-13:00",
+          "Fr 12:00-13:00"
+        ],
+        "sameAs": [
+          "https://www.facebook.com/your-profile",
+          "https://www.instagram.com/your-profile"
+        ]
+      }
+    `}
+        </script>
       </Helmet>
-      <Container
-        component="main"
-        maxWidth="xl"
+      <Box
+        component="section"
+        aria-labelledby="services-heading"
         sx={{
+          position: 'relative',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          textAlign: 'left',
-          backgroundColor: '#efeeee',
-          p: { xs: 2, sm: 4 },
+          mt: { xs: 4, sm: 8 },
+          mb: { xs: 4, sm: 8 },
+          px: { xs: 2, sm: 4 },
         }}
       >
         <Box
-          component="section"
           sx={{
-            px: { xs: 4, md: 4 },
-            py: { xs: 4, md: 4 },
-            color: '#383838',
-            width: '80%',
+            display: 'flex',
+            flexDirection: 'column',
             justifyContent: 'center',
+            alignItems: 'flex-start',
+            textAlign: 'left',
+            backgroundColor: '#efeeee',
+            width: { xs: '90%', sm: '70%' },
+            p: { xs: 2, sm: 4 },
           }}
         >
           <CleanGrid
@@ -217,29 +234,7 @@ function MainContactFullWidth() {
                     Standort
                   </Typography>
                   <Typography component="p">
-                    Meine Praxis befindet sich an der Ecke Beckergrube - Breite Straße in unmittelbarer Nachbarschaft der Fußgängerzone Lübeck.
-                  </Typography>
-                  <Typography variant="h6" component="h4" gutterBottom mt={2}>
-                    Anreise mit dem Bus
-                  </Typography>
-                  <Typography component="p">
-                    Für die Anreise mit dem öffentlichen Nahverkehr könnten folgende Informationen hilfreich sein. Da die Haltestelle Beckergrube wegen Bauarbeiten über einen längeren Zeitraum gesperrt ist, nutzen Sie die unten stehenden Haltestelleninformationen.
-                  </Typography>
-                  <Typography component="p">
-                    Aus Richtung Bahnhof fahren Sie mit der Linie 5 bis zur Haltestelle Wahmstraße und durchqueren die Fußgängerzone Breite Straße bis zur Beckergrube, ca. 10 Minuten Fußweg.
-                    Alternativ fahren Sie mit den Linien 3, 10, 11, 21, 30, 32, 39, 40 bis zur Haltestelle Katharineum und gelangen durch die Pfaffenstraße zur Beckergrube, ca. 5 Minuten Fußweg.
-                    Aus Richtung Gustav-Radbruch-Platz nutzen Sie den eingerichteten Shuttle am Bussteig 3 und fahren bis zur Haltestelle Breitestraße, ca. 2 Minuten Fußweg.
-                    Oder Sie fahren mit den Linien 3, 5, 10, 11, 12, 21, 30, 31, 32, 39, 40 bis zur Haltestelle Wahmstraße, den Linien 1, 2, 3, 5, 6, 7, 9, 10, 10, 12, 15, 16, 21, 30, 31, 32, 39, 40 bis zur Haltestelle Kohlmarkt oder den Linien 1, 2, 4, 6, 7, 9, 15, 16, 17 bis zur Haltestelle Sandstraße. Von der jeweiligen Haltestelle gehen Sie durch die Fußgängerzone Breite Straße bis zur Beckergrube, ca. 10 bis 12 Minuten Fußweg.
-                  </Typography>
-
-                  <Typography variant="h6" component="h4" gutterBottom mt={2}>
-                    Anfahrt mit dem Auto
-                  </Typography>
-                  <Typography component="p">
-                    Für die Anreise mit dem Auto gibt es an der Musik und Kongresshalle (MUK) Parkplätze, ca. 10 Minuten Fußweg.
-                    Weitere Parkmöglichkeiten finden sich in den Parkhäusern der Innenstadt.
-                    Es befinden sich Behindertenparkplätze gegenüber der Sparkasse in der Breite Straße, ca. 1 Minute Fußweg.
-                  </Typography>
+                    Meine Praxis befindet sich an der Ecke Beckergrube - Breite Straße in unmittelbarer Nachbarschaft der Fußgängerzone Lübeck und des Stadttheaters im dritten Stockwerk mit Blick auf die Lübecker Marienkirche. Die Praxis ist barrierearm, Sie müssen 5 Stufen im Eingangsbereich überwinden und können dann den Aufzug hinter der Glastür auf der rechten Seite im Treppenhaus nehmen.                  </Typography>
                 </Box>
               </Box>
             </CleanGrid>
@@ -288,7 +283,7 @@ function MainContactFullWidth() {
             </CleanGrid>
           </CleanGrid>
         </Box>
-      </Container>
+      </Box>
     </>
   );
 }

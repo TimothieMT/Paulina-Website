@@ -48,15 +48,10 @@ function Navbar() {
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-            flexDirection: 'row',
           }}
         >
-          {/* Desktop-Navigation */}
-          <Box
-            component="nav"
-            sx={{ display: { xs: 'none', md: 'flex' }, gap: 3 }}
-            aria-label="Primäre Navigation"
-          >
+          {/* Desktop Navigation */}
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3 }}>
             {[
               { name: 'Kostenübersicht', path: '/overview' },
               { name: 'Werdegang', path: '/vita' },
@@ -67,7 +62,6 @@ function Navbar() {
                 component={Link}
                 to={page.path}
                 sx={{
-                  backgroundColor: 'transparent',
                   color: '#737373',
                   '&:hover': { backgroundColor: '#85ab7f', color: '#efeeee' },
                 }}
@@ -78,24 +72,23 @@ function Navbar() {
           </Box>
 
           {/* Logo */}
-          <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center', marginTop: 3 }}>
-            <Link to="/" aria-label="Zur Startseite">
+          <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center', mt: 3 }}>
+            <Link to="/">
               <Box
                 component="img"
                 src="/Logo.png"
-                alt="Das Logo zeigt mittig die Silhouette eines menschlichen Kopfes im Seitenprofil, der aus stilisierten grünen Blättern und Zweigen geformt ist und Wachstum, Gesundheit und Lebenskraft symbolisiert. Links neben der Silhouette steht das Wort „THERAPIE“ und rechts daneben „TOLK“, beide Wörter in klaren, grauen Großbuchstaben. Unterhalb des Logos befindet sich der Zusatz „SYSTEMISCHE THERAPIE“ in kleinerer, ebenfalls grauer Schrift, was auf die therapeutische Fachrichtung hinweist."
-                sx={{ width: isSmallScreen ? '300px' : '400px', height: 'auto' }}
+                alt="Logo"
+                sx={{ width: isSmallScreen ? '250px' : '400px', height: 'auto' }}
               />
             </Link>
           </Box>
 
-          {/* Desktop: Button "Termin vereinbaren" */}
+          {/* Desktop Button */}
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <Button
               component={Link}
               to="/contact"
               sx={{
-                backgroundColor: 'transparent',
                 color: '#737373',
                 '&:hover': { backgroundColor: '#85ab7f', color: '#efeeee' },
               }}
@@ -104,43 +97,59 @@ function Navbar() {
             </Button>
           </Box>
 
-          {/* Mobile-Navigation */}
+          {/* Mobile Navigation */}
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
+              size="large"
               onClick={handleOpenNavMenu}
               aria-label="Navigation Menü öffnen"
-              aria-controls="nav-menu"
-              aria-haspopup="true"
-              aria-expanded={anchorElNav ? 'true' : 'false'}
             >
-              <MenuIcon sx={{ color: '#85ab7f' }} />
+              <MenuIcon sx={{ color: '#85ab7f', fontSize: '2rem' }} />
             </IconButton>
             <Menu
-              id="nav-menu"
               anchorEl={anchorElNav}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{ '& .MuiPaper-root': { backgroundColor: '#85ab7f' } }}
+              sx={{
+                '& .MuiPaper-root': {
+                  backgroundColor: '#85ab7f',
+                  width: '100vw',
+                  maxWidth: '100%',
+                  left: 0,
+                  right: 0,
+                },
+              }}
+              anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+              transformOrigin={{ vertical: 'top', horizontal: 'center' }}
             >
               {[
                 { name: 'Kostenübersicht', path: '/overview' },
                 { name: 'Werdegang', path: '/vita' },
                 { name: 'Leistungen', path: '/service' },
-              ].map((page) => (
+                { name: 'Termin vereinbaren', path: '/contact' },
+              ].map((page, index, array) => (
                 <MenuItem
                   key={page.name}
                   onClick={handleCloseNavMenu}
                   component={Link}
                   to={page.path}
+                  sx={{ justifyContent: 'center', py: 2 }}
                 >
-                  <Typography textAlign="center">{page.name}</Typography>
+                  <Typography
+                    textAlign="center"
+                    fontWeight={600}
+                    sx={{
+                      color: index === array.length - 1 ? '#000000' : '#efeeee',
+                      fontSize: '1.2rem',
+                      letterSpacing: 0.9,
+                      lineHeight: 2,
+                      marginTop: 2,
+                    }}
+                  >
+                    {page.name}
+                  </Typography>
                 </MenuItem>
               ))}
-              <MenuItem onClick={handleCloseNavMenu} component={Link} to="/contact">
-                <Typography textAlign="center" sx={{ fontWeight: 'bold', color: '#383838' }}>
-                  Termin vereinbaren
-                </Typography>
-              </MenuItem>
             </Menu>
           </Box>
         </Toolbar>

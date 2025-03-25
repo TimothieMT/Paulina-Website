@@ -33,18 +33,31 @@ const Policy = () => {
       >
         {inView && (
           <Box
-            component="article"
+            component="section"
+            aria-labelledby="services-heading"
             sx={{
+              position: 'relative',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
-              alignItems: 'flex-start',
-              textAlign: 'left',
-              backgroundColor: '#efeeee',
-              width: { xs: '90%', sm: '70%' },
-              p: { xs: 2, sm: 4 },
+              alignItems: 'center',
+              mt: { xs: 4, sm: 8 },
+              mb: { xs: 4, sm: 8 },
+              px: { xs: 2, sm: 4 },
             }}
           >
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'flex-start',
+                textAlign: 'left',
+                backgroundColor: '#efeeee',
+                width: { xs: '90%', sm: '70%' },
+                p: { xs: 2, sm: 4 },
+              }}
+            >
             <Typography variant="h4" component="h1" gutterBottom>
               Datenschutzerklärung
             </Typography>
@@ -304,6 +317,7 @@ const Policy = () => {
               </Typography>
             </section>
           </Box>
+        </Box>
         )}
       </Box>
     </>
