@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet';
-import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
+import { Box, Card, CardActionArea, CardContent, Typography } from '@mui/material';
 import Grid2 from '@mui/material/Grid2';
 
 const services = [
