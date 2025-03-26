@@ -62,7 +62,6 @@ const Impressum = () => {
                 sx={{
                   backgroundColor: 'transparent',
                   color: '#383838',
-                  fontWeight: 300,
                   '&:hover': { color: '#85ab7f' },
                 }}
               >
@@ -77,7 +76,6 @@ const Impressum = () => {
                 sx={{
                   backgroundColor: 'transparent',
                   color: '#383838',
-                  fontWeight: 300,
                   '&:hover': { color: '#85ab7f' },
                 }}
               >
@@ -91,7 +89,7 @@ const Impressum = () => {
             <Typography variant="h6" component="h2" gutterBottom>
               Inhaltlich Verantwortlich gemäß § 10 Absatz 3 MDStV:
             </Typography>
-            <Box component="address" sx={{ fontStyle: 'normal' }}>
+            <Box component="address">
               <Typography component="p">M.Sc. Psych., HP Psych. Paulina Tolk</Typography>
               <Typography component="p">Systemische Therapeutin und Beraterin (SG)</Typography>
               <Typography component="p">Praxis für Psychotherapie</Typography>

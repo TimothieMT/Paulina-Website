@@ -47,8 +47,6 @@ const Content = () => {
             width: { xs: '90%', sm: '70%' },
             p: { xs: 2, sm: 4 },
             marginBottom: 8,
-            letterSpacing: 0.9,
-            lineHeight: 2,
             marginTop: 8,
           }}
         >
@@ -68,22 +66,22 @@ const Content = () => {
             px: 2,
           }}
         >
-          <Typography variant="h4" gutterBottom sx={{ letterSpacing: 0.9, lineHeight: 2, marginBottom: 3 }}>
+          <Typography variant="h4" gutterBottom>
             Systemische Therapie
           </Typography>
-          <Typography variant="body1" gutterBottom sx={{ letterSpacing: 0.9, lineHeight: 2, marginBottom: 3 }}>
+          <Typography variant="body1" gutterBottom>
             Die systemische Therapie ist ein Ansatz, der den Menschen nicht isoliert, sondern als Teil eines größeren sozialen Kontexts betrachtet.
           </Typography>
-          <Typography variant="body1" gutterBottom sx={{ letterSpacing: 0.9, lineHeight: 2, marginBottom: 3 }}>
+          <Typography variant="body1" gutterBottom>
             Im Mittelpunkt stehen die Wechselwirkungen in Familien, Partnerschaften und anderen sozialen Gruppen, die oft den Kern individueller Probleme bilden.
           </Typography>
-          <Typography variant="body1" gutterBottom sx={{ letterSpacing: 0.9, lineHeight: 2, marginBottom: 3 }}>
+          <Typography variant="body1" gutterBottom>
             Durch gezielte Methoden wie zirkuläres Fragen, Reframing und Aufstellungstechniken werden Kommunikationsmuster und Interaktionsstrukturen analysiert und verändert.
           </Typography>
-          <Typography variant="body1" gutterBottom sx={{ letterSpacing: 0.9, lineHeight: 2, marginBottom: 3 }}>
+          <Typography variant="body1" gutterBottom>
             Dieser Ansatz betont, dass jeder Beteiligte sowohl Ursache als auch Wirkung sein kann – so werden Schuldzuweisungen vermieden und gemeinsame Lösungswege gefunden.
           </Typography>
-          <Typography variant="body1" gutterBottom sx={{ letterSpacing: 0.9, lineHeight: 2 }}>
+          <Typography variant="body1" gutterBottom>
             Insgesamt unterstützt die systemische Therapie dabei, Konflikte zu lösen, gesündere Beziehungsstrukturen zu entwickeln und nachhaltige Veränderungen im gesamten System zu bewirken.
           </Typography>
         </Box>

@@ -10,6 +10,7 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Grid2 from '@mui/material/Grid2';
+import SendIcon from '@mui/icons-material/Send';
 
 const CleanGrid = styled(Grid2, {
   shouldForwardProp: (prop) => prop !== 'item',
@@ -213,6 +214,7 @@ function MainContactFullWidth() {
                         color: '#383838',
                         '&:hover': { backgroundColor: '#85ab7f', color: '#fff' },
                       }}
+                      endIcon={<SendIcon />}
                     >
                       Absenden
                     </Button>
@@ -234,7 +236,10 @@ function MainContactFullWidth() {
                     Standort
                   </Typography>
                   <Typography component="p">
-                    Meine Praxis befindet sich an der Ecke Beckergrube - Breite Straße in unmittelbarer Nachbarschaft der Fußgängerzone Lübeck und des Stadttheaters im dritten Stockwerk mit Blick auf die Lübecker Marienkirche. Die Praxis ist barrierearm, Sie müssen 5 Stufen im Eingangsbereich überwinden und können dann den Aufzug hinter der Glastür auf der rechten Seite im Treppenhaus nehmen.                  </Typography>
+                    Meine Praxis befindet sich an der Ecke Beckergrube - Breite Straße in unmittelbarer Nachbarschaft
+                    der Fußgängerzone Lübeck und des Stadttheaters im dritten Stockwerk mit Blick auf die Lübecker
+                    Marienkirche. Die Praxis ist barrierearm, Sie müssen 5 Stufen im Eingangsbereich überwinden und
+                    können dann den Aufzug hinter der Glastür auf der rechten Seite im Treppenhaus nehmen. </Typography>
                 </Box>
               </Box>
             </CleanGrid>
@@ -283,6 +288,14 @@ function MainContactFullWidth() {
             </CleanGrid>
           </CleanGrid>
         </Box>
+        <iframe
+          width= '100%'
+          height="600"
+          style={{ border: 0 }}
+          loading="lazy"
+          allowFullScreen
+          src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJQ3MSG1gJskcRy3lxGZCsG7g&key=AIzaSyBeHb52p-tDZ841OELtya-Vad1jmrIWENI"
+        ></iframe>
       </Box>
     </>
   );

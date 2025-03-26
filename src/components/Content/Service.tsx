@@ -1,32 +1,38 @@
 import { Helmet } from 'react-helmet';
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Typography, Card, CardMedia, CardContent, CardActionArea } from '@mui/material';
 import Grid2 from '@mui/material/Grid2';
+
 
 const services = [
   {
     title: 'Psychotherapie',
     description:
       'In der Psychotherapie lernen Sie, effektive Bewältigungsstrategien zu entwickeln, um mit Stress und emotionalen Belastungen umzugehen. Unsere Ansätze helfen Ihnen, tief verwurzelte Verhaltensmuster zu erkennen und langfristig mehr innere Ruhe sowie Stabilität zu erreichen.',
+    image: '/psychotherapie.jpg',
   },
   {
     title: 'Paartherapie',
     description:
       'Die Paartherapie bietet Ihnen einen sicheren Raum, um Kommunikationsprobleme zu identifizieren und gemeinsam nachhaltige Lösungen zu erarbeiten. Durch professionelle Unterstützung können Sie Ihre Beziehung stärken und langfristige Harmonie erreichen.',
+    image: '/entspannt.jpg',
   },
   {
     title: 'Persönlichkeitsentwicklung',
     description:
       'Unsere Angebote zur Persönlichkeitsentwicklung fördern Ihre individuelle Entfaltung und unterstützen Sie dabei, Ihr Selbstbewusstsein nachhaltig zu stärken. Entdecken Sie Ihre Potenziale und lernen Sie, diese gezielt für Ihre persönliche Weiterentwicklung einzusetzen.',
+    image: '/persoenlichkeitsentwicklung.jpg',
   },
   {
     title: 'Angstbewältigung',
     description:
       'In unseren Sitzungen zur Angstbewältigung unterstützen wir Sie dabei, Ängste systematisch zu verstehen und zu reduzieren. Erfahren Sie, wie Sie Unsicherheiten überwinden und wieder mehr Lebensfreude sowie Selbstvertrauen gewinnen können.',
+    image: '/angstbewältigung.jpg',
   },
   {
     title: 'Familientherapie',
     description:
       'Die Familientherapie unterstützt Familien dabei, bestehende Konflikte offen anzusprechen und gemeinsam konstruktive Lösungsansätze zu entwickeln. Fördern Sie eine harmonische Kommunikation und ein respektvolles Miteinander in Ihrem familiären Umfeld.',
+    image: '/familientherapie.jpg',
   },
 ];
 
@@ -44,10 +50,8 @@ const Service = () => {
         component="section"
         aria-labelledby="services-heading"
         sx={{
-          position: 'relative',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'center',
           alignItems: 'center',
           mt: { xs: 4, sm: 8 },
           mb: { xs: 4, sm: 8 },
@@ -56,14 +60,10 @@ const Service = () => {
       >
         <Box
           sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'flex-start',
-            textAlign: 'left',
             backgroundColor: '#efeeee',
             width: { xs: '90%', sm: '70%' },
             p: { xs: 2, sm: 4 },
+            textAlign: 'left',
           }}
         >
           <Typography
@@ -71,30 +71,39 @@ const Service = () => {
             component="h2"
             gutterBottom
             id="services-heading"
+            textAlign="center"
           >
             Meine angebotenen Leistungen
           </Typography>
-          <Typography
-            variant="subtitle1"
-            component="p"
-            color="textSecondary"
-            mb={4}
-          >
+          <Typography variant="subtitle1" component="p" color="textSecondary" mb={4} textAlign={'center'}>
             Individuelle psychologische Beratung für Ihr Wohlbefinden – von Therapie bis Persönlichkeitsentwicklung.
           </Typography>
 
-          <Grid2 component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }}>
+          <Grid2
+            container
+            spacing={4}
+            component="ul"
+            sx={{ listStyle: 'none', p: 0, m: 0 }}
+          >
             {services.map((service, index) => (
-              <Container component="li" key={index} sx={{ mb: 4 }}>
-                <Box component="article">
-                  <Typography variant="h6" component="h3">
-                    {service.title}
-                  </Typography>
-                  <Typography variant="body1" component="p" sx={{ mt: 1 }}>
-                    {service.description}
-                  </Typography>
-                </Box>
-              </Container>
+                <Card sx={{ maxWidth: 345, backgroundColor: '#efeeee', border: '1px solid #85ab7f' }} key={index}>
+                  <CardActionArea>
+                    <CardMedia
+                      component="img"
+                      height="200"
+                      image={service.image}
+                      alt={service.title}
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        {service.title}
+                      </Typography>
+                      <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                        {service.description}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
             ))}
           </Grid2>
         </Box>
