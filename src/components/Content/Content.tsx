@@ -84,7 +84,7 @@ const Content = () => {
         marginRight={3}
         marginLeft={3}
       >
-        <Grid item xs={12} md={4}>
+        <Grid xs={12} md={4}>
           <Item sx={{ backgroundColor: '#efeeee', height: 'auto', width: '100%', boxShadow: 'none' }}>
             <Typography variant="body1" gutterBottom>
               Die systemische Therapie ist ein Ansatz, der den Menschen nicht isoliert, sondern als Teil eines größeren sozialen Kontexts betrachtet.
@@ -94,7 +94,7 @@ const Content = () => {
             </Typography>
           </Item>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid xs={12} md={4}>
           <Item sx={{ backgroundColor: '#efeeee', height: 'auto', width: '100%', boxShadow: 'none' }}>
             <Typography variant="body1" gutterBottom>
               Durch gezielte Methoden wie zirkuläres Fragen, Reframing und Aufstellungstechniken werden Kommunikationsmuster und Interaktionsstrukturen analysiert und verändert.
@@ -104,7 +104,7 @@ const Content = () => {
             </Typography>
           </Item>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid xs={12} md={4}>
           <Item sx={{ backgroundColor: '#efeeee', height: 'auto', width: '100%', boxShadow: 'none' }}>
             <Typography variant="body1" gutterBottom>
               Insgesamt unterstützt die systemische Therapie dabei, Konflikte zu lösen, gesündere Beziehungsstrukturen zu entwickeln und nachhaltige Veränderungen im gesamten System zu bewirken.
