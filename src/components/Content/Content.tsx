@@ -53,7 +53,12 @@ const Content = () => {
         <Typography variant={isSmallScreen ? 'h5' : 'h3'} fontWeight={200} component="blockquote">
           „Verstehen kann man das Leben nur rückwärts. Leben muss man es vorwärts.“
         </Typography>
-        <Typography mt={2} fontWeight={100} component="cite">
+        <Typography
+          mt={2}
+          fontWeight={100}
+          component="cite"
+          sx={{ textAlign: 'right', width: '100%' }}
+        >
           - Søren Kierkegaard -
         </Typography>
       </Box>
