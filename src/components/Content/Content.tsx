@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 import { Box, Typography, useTheme, useMediaQuery } from '@mui/material';
-import Grid from '@mui/material/Grid2';
+import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 
@@ -10,6 +10,7 @@ const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
   textAlign: 'center',
   color: theme.palette.text.secondary,
+  border: 'none',
 }));
 
 const Content = () => {
@@ -70,7 +71,7 @@ const Content = () => {
           maxWidth: '100%',
           px: 2,
           textAlign: 'center',
-          marginTop: 5,
+          mt: 5,
           color: '#737373',
         }}
       >
@@ -79,18 +80,14 @@ const Content = () => {
         </Typography>
       </Box>
 
-      {/* Grid-Container mit nebeneinander angeordneten Items */}
+      {/* Grid-Container mit responsiven Abständen */}
       <Grid
         container
         spacing={3}
-        wrap={isSmallScreen ? "wrap" : "nowrap"}
-        marginBottom={10}
-        marginTop={5}
-        marginRight={3}
-        marginLeft={3}
+        marginBottom={5}
       >
-        <Grid xs={12} md={4}>
-          <Item sx={{ backgroundColor: '#efeeee', height: 'auto', width: '100%', boxShadow: 'none' }}>
+        <Grid item xs={12} md={4}>
+          <Item sx={{ backgroundColor: '#efeeee', boxShadow: 'none' }}>
             <Typography variant="body1" gutterBottom>
               Die systemische Therapie ist ein Ansatz, der den Menschen nicht isoliert, sondern als Teil eines größeren sozialen Kontexts betrachtet.
             </Typography>
@@ -99,8 +96,8 @@ const Content = () => {
             </Typography>
           </Item>
         </Grid>
-        <Grid xs={12} md={4}>
-          <Item sx={{ backgroundColor: '#efeeee', height: 'auto', width: '100%', boxShadow: 'none' }}>
+        <Grid item xs={12} md={4}>
+          <Item sx={{ backgroundColor: '#efeeee', boxShadow: 'none' }}>
             <Typography variant="body1" gutterBottom>
               Durch gezielte Methoden wie zirkuläres Fragen, Reframing und Aufstellungstechniken werden Kommunikationsmuster und Interaktionsstrukturen analysiert und verändert.
             </Typography>
@@ -109,8 +106,8 @@ const Content = () => {
             </Typography>
           </Item>
         </Grid>
-        <Grid xs={12} md={4}>
-          <Item sx={{ backgroundColor: '#efeeee', height: 'auto', width: '100%', boxShadow: 'none' }}>
+        <Grid item xs={12} md={4}>
+          <Item sx={{ backgroundColor: '#efeeee', boxShadow: 'none' }}>
             <Typography variant="body1" gutterBottom>
               Insgesamt unterstützt die systemische Therapie dabei, Konflikte zu lösen, gesündere Beziehungsstrukturen zu entwickeln und nachhaltige Veränderungen im gesamten System zu bewirken.
             </Typography>
