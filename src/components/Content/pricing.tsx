@@ -66,7 +66,7 @@ const Pricing = () => {
             container
             spacing={4}
             component="ul"
-            sx={{ listStyle: 'none', p: 0, m: 0 , mt: 6}}
+            sx={{ listStyle: 'none', p: 0, m: 0 , mt: 6, justifyContent: 'center' }}
           >
             {services.map((service, index) => (
               <Card sx={{ maxWidth: 345, backgroundColor: '#efeeee', border: '1px solid #85ab7f' }} key={index}>

@@ -83,10 +83,10 @@ const Service = () => {
             container
             spacing={4}
             component="ul"
-            sx={{ listStyle: 'none', p: 0, m: 0 }}
+            sx={{ listStyle: 'none', p: 0, m: 0, justifyContent: 'center' }}
           >
             {services.map((service, index) => (
-                <Card sx={{ maxWidth: 345, backgroundColor: '#efeeee', border: '1px solid #85ab7f' }} key={index}>
+                <Card sx={{ maxWidth: 345, backgroundColor: '#efeeee', border: '1px solid #85ab7f', height: 'auto' }} key={index}>
                   <CardActionArea>
                     <CardMedia
                       component="img"

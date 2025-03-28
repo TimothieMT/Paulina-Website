@@ -291,7 +291,7 @@ function MainContactFullWidth() {
         <iframe
           width= '100%'
           height="600"
-          style={{ border: 0 }}
+          style={{ border: '1px solid #85ab7f', borderRadius: '20px', marginTop: '4rem' }}
           loading="lazy"
           allowFullScreen
           src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJQ3MSG1gJskcRy3lxGZCsG7g&key=AIzaSyBeHb52p-tDZ841OELtya-Vad1jmrIWENI"

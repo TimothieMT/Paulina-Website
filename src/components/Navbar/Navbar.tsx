@@ -40,7 +40,6 @@ function Navbar() {
           background: '#efeeee',
           boxShadow: 'none',
           borderBottom: 'none',
-          marginBottom: '40px',
         }}
       >
         <Toolbar
