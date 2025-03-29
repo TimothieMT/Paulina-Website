@@ -11,6 +11,53 @@ import {
 import { styled } from '@mui/material/styles';
 import Grid2 from '@mui/material/Grid2';
 import SendIcon from '@mui/icons-material/Send';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const customTheme = createTheme({
+  typography: {
+    h4: {
+      fontFamily: 'medium, sans-serif',
+      fontSize: '2rem',
+    },
+    h1: {
+      fontFamily: 'medium, sans-serif',
+      fontSize: '2rem',
+
+    },
+    h2: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1.5rem',
+    },
+    h6: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1.5rem',
+    },
+    h5: {
+      fontFamily: 'medium, sans-serif',
+      fontSize: '1.5rem',
+    },
+    p: {
+      fontFamily: 'thin, sans-serif',
+      fontSize: '0.8rem',
+      color: '#737373',
+    },
+    body1: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1rem',
+      color: '#737373',
+    },
+    subtitle1: {
+      fontFamily: 'light, sans-serif',
+      fontSize: '1.1rem',
+      color: '#737373',
+    },
+    body2: {
+      fontFamily: 'light, sans-serif',
+      fontSize: '1rem',
+      color: '#737373',
+    }
+  },
+});
 
 const CleanGrid = styled(Grid2, {
   shouldForwardProp: (prop) => prop !== 'item',
@@ -71,8 +118,8 @@ function MainContactFullWidth() {
   };
 
   return (
-    <>
-      <Helmet>
+    <ThemeProvider theme={customTheme}>
+    <Helmet>
         <title>Kontakt – Psychotherapie Lübeck | Paulina Tolk, systemische Therapeutin</title>
         <meta
           name="description"
@@ -98,9 +145,9 @@ function MainContactFullWidth() {
         "telephone": "+4917643608599",
         "email": "therapie.tolk@gmail.com",
         "openingHours": [
-          "Mo 12:00-13:00",
-          "Tu 12:00-13:00",
-          "Fr 12:00-13:00"
+          "Mo 11:00-12:00",
+          "Tu 11:00-12:00",
+          "Do 11:00-12:00"
         ],
         "sameAs": [
           "https://www.facebook.com/your-profile",
@@ -157,20 +204,20 @@ function MainContactFullWidth() {
                   <Typography component="p">
                     Telefonisch erreichen Sie mich persönlich zu meinen Sprechzeiten. Diese sind wie folgt:
                   </Typography>
-                  <Box component="ul" sx={{ listStyleType: 'none', pl: 0, m: 0 }}>
+                  <Box component="ul" p={3} sx={{ listStyleType: 'none', pl: 0, m: 0 }}>
                     <Box component="li">
                       <Typography variant="subtitle1" component="span">
-                        Montag: 12 - 13 Uhr
+                        <strong>Montag: 11 - 12 Uhr</strong>
                       </Typography>
                     </Box>
                     <Box component="li">
                       <Typography variant="subtitle1" component="span">
-                        Dienstag: 12 - 13 Uhr
+                        <strong>Dienstag: 11 - 12 Uhr</strong>
                       </Typography>
                     </Box>
                     <Box component="li">
                       <Typography variant="subtitle1" component="span">
-                        Freitag: 12 - 13 Uhr
+                        <strong>Donerstag: 11 - 12 Uhr</strong>
                       </Typography>
                     </Box>
                   </Box>
@@ -262,7 +309,7 @@ function MainContactFullWidth() {
                       underline="none"
                       sx={{
                         backgroundColor: 'transparent',
-                        color: '#383838',
+                        color: '#737373',
                         '&:hover': { color: '#85ab7f' },
                       }}
                     >
@@ -276,7 +323,7 @@ function MainContactFullWidth() {
                       underline="none"
                       sx={{
                         backgroundColor: 'transparent',
-                        color: '#383838',
+                        color: '#737373',
                         '&:hover': { color: '#85ab7f' },
                       }}
                     >
@@ -288,16 +335,26 @@ function MainContactFullWidth() {
             </CleanGrid>
           </CleanGrid>
         </Box>
-        <iframe
-          width= '100%'
-          height="600"
-          style={{ border: '1px solid #85ab7f', borderRadius: '20px', marginTop: '4rem' }}
-          loading="lazy"
-          allowFullScreen
-          src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJQ3MSG1gJskcRy3lxGZCsG7g&key=AIzaSyBeHb52p-tDZ841OELtya-Vad1jmrIWENI"
-        ></iframe>
+        <MuiLink
+          href="https://www.google.de/maps/place/Beckergrube+2,+23552+L%C3%BCbeck/@53.8697364,10.684798,17z/data=!3m1!4b1!4m6!3m5!1s0x47b209581b127343:0xb81bac90197179cb!8m2!3d53.8697364!4d10.6873729!16s%2Fg%2F11bw3xn3lb?entry=ttu&g_ep=EgoyMDI1MDMyNS4xIKXMDSoASAFQAw%3D%3D"
+          underline="none"
+          target={'_blank'}
+        >
+          <Box
+            component="img"
+            src="public/place.png"
+            alt="Ein schmaler, geschwungener Sandweg führt durch einen lichten Wald mit hohen, schlanken Bäumen entlang einer sanften, grasbewachsenen Böschung direkt am Meer."
+            sx={{
+              width: '100%',
+              height: '600px',
+              objectFit: 'cover',
+              borderRadius: 4,
+              border: '1px solid #85ab7f',
+            }}
+          />
+        </MuiLink>
       </Box>
-    </>
+    </ThemeProvider>
   );
 }
 

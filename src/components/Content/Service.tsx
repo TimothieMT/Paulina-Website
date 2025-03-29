@@ -1,7 +1,53 @@
 import { Helmet } from 'react-helmet';
 import { Box, Typography, Card, CardMedia, CardContent, CardActionArea } from '@mui/material';
 import Grid2 from '@mui/material/Grid2';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+const customTheme = createTheme({
+  typography: {
+    h4: {
+      fontFamily: 'medium, sans-serif',
+      fontSize: '2rem',
+    },
+    h1: {
+      fontFamily: 'medium, sans-serif',
+      fontSize: '2rem',
+
+    },
+    h2: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1.5rem',
+    },
+    h6: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1.5rem',
+    },
+    h5: {
+      fontFamily: 'medium, sans-serif',
+      fontSize: '1.5rem',
+    },
+    p: {
+      fontFamily: 'thin, sans-serif',
+      fontSize: '0.8rem',
+      color: '#737373',
+    },
+    body1: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1rem',
+      color: '#737373',
+    },
+    subtitle1: {
+      fontFamily: 'light, sans-serif',
+      fontSize: '1.1rem',
+      color: '#737373',
+    },
+    body2: {
+      fontFamily: 'light, sans-serif',
+      fontSize: '1rem',
+      color: '#737373',
+    }
+  },
+});
 
 const services = [
   {
@@ -38,8 +84,8 @@ const services = [
 
 const Service = () => {
   return (
-    <>
-      <Helmet>
+    <ThemeProvider theme={customTheme}>
+    <Helmet>
         <title>Meine Leistungen – Psychotherapie in Lübeck | Paulina Tolk</title>
         <meta
           name="description"
@@ -86,7 +132,7 @@ const Service = () => {
             sx={{ listStyle: 'none', p: 0, m: 0, justifyContent: 'center' }}
           >
             {services.map((service, index) => (
-                <Card sx={{ maxWidth: 345, backgroundColor: '#efeeee', border: '1px solid #85ab7f', height: 'auto' }} key={index}>
+                <Card sx={{ maxWidth: 380, backgroundColor: '#efeeee', border: '1px solid #85ab7f', height: 'auto' }} key={index}>
                   <CardActionArea>
                     <CardMedia
                       component="img"
@@ -108,7 +154,7 @@ const Service = () => {
           </Grid2>
         </Box>
       </Box>
-    </>
+    </ThemeProvider>
   );
 };
 

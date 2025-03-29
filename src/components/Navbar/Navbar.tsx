@@ -11,6 +11,58 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 import { useMediaQuery, useTheme } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Slide from '@mui/material/Slide';
+
+const customTheme = createTheme({
+  typography: {
+    h4: {
+      fontFamily: 'medium, sans-serif',
+      fontSize: '2rem',
+    },
+    h1: {
+      fontFamily: 'medium, sans-serif',
+      fontSize: '2rem',
+    },
+    h2: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1.5rem',
+    },
+    h6: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1.5rem',
+    },
+    h5: {
+      fontFamily: 'medium, sans-serif',
+      fontSize: '1.5rem',
+    },
+    p: {
+      fontFamily: 'thin, sans-serif',
+      fontSize: '0.8rem',
+      color: '#737373',
+    },
+    body1: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1rem',
+      color: '#737373',
+    },
+    subtitle1: {
+      fontFamily: 'light, sans-serif',
+      fontSize: '1.1rem',
+      color: '#737373',
+    },
+    body2: {
+      fontFamily: 'light, sans-serif',
+      fontSize: '1rem',
+      color: '#737373',
+    },
+    body3: {
+      fontFamily: 'medium, sans-serif',
+      fontSize: '1rem',
+      color: '#85ab7f',
+    }
+  },
+});
 
 function Navbar() {
   const theme = useTheme();
@@ -26,7 +78,7 @@ function Navbar() {
   };
 
   return (
-    <>
+    <ThemeProvider theme={customTheme}>
       <Helmet>
         <title>Therapie Paulina Tolk – Psychotherapie in Lübeck</title>
         <meta
@@ -40,6 +92,7 @@ function Navbar() {
           background: '#efeeee',
           boxShadow: 'none',
           borderBottom: 'none',
+          marginBottom: 3,
         }}
       >
         <Toolbar
@@ -60,6 +113,7 @@ function Navbar() {
                 key={page.name}
                 component={Link}
                 to={page.path}
+                variant="subtitle1"
                 sx={{
                   color: '#737373',
                   '&:hover': { backgroundColor: '#85ab7f', color: '#efeeee' },
@@ -86,6 +140,7 @@ function Navbar() {
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <Button
               component={Link}
+              variant="subtitle1"
               to="/contact"
               sx={{
                 color: '#737373',
@@ -109,6 +164,11 @@ function Navbar() {
               anchorEl={anchorElNav}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
+              TransitionComponent={Slide}
+              TransitionProps={{
+                direction: 'down',
+                timeout: { enter: 500, exit: 300 }, // Angepasste Dauer für sanftere Animation
+              }}
               sx={{
                 '& .MuiPaper-root': {
                   backgroundColor: '#85ab7f',
@@ -136,10 +196,9 @@ function Navbar() {
                 >
                   <Typography
                     textAlign="center"
-                    fontWeight={600}
+                    variant="subtitle1"
                     sx={{
                       color: index === array.length - 1 ? '#000000' : '#efeeee',
-                      fontSize: '1.2rem',
                       letterSpacing: 0.9,
                       lineHeight: 2,
                       marginTop: 2,
@@ -153,7 +212,7 @@ function Navbar() {
           </Box>
         </Toolbar>
       </AppBar>
-    </>
+    </ThemeProvider>
   );
 }
 

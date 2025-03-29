@@ -1,6 +1,53 @@
 import { Helmet } from 'react-helmet';
 import { Box, Typography, Link as MuiLink } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const customTheme = createTheme({
+  typography: {
+    h4: {
+      fontFamily: 'medium, sans-serif',
+      fontSize: '2rem',
+    },
+    h1: {
+      fontFamily: 'medium, sans-serif',
+      fontSize: '2rem',
+
+    },
+    h2: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1.5rem',
+    },
+    h6: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1.5rem',
+    },
+    h5: {
+      fontFamily: 'medium, sans-serif',
+      fontSize: '1.5rem',
+    },
+    p: {
+      fontFamily: 'thin, sans-serif',
+      fontSize: '0.8rem',
+      color: '#737373',
+    },
+    body1: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1rem',
+      color: '#737373',
+    },
+    subtitle1: {
+      fontFamily: 'light, sans-serif',
+      fontSize: '1.1rem',
+      color: '#737373',
+    },
+    body2: {
+      fontFamily: 'light, sans-serif',
+      fontSize: '1rem',
+      color: '#737373',
+    }
+  },
+});
 
 const Policy = () => {
   const { ref, inView } = useInView({
@@ -9,8 +56,8 @@ const Policy = () => {
   });
 
   return (
-    <>
-      <Helmet>
+    <ThemeProvider theme={customTheme}>
+    <Helmet>
         <title>Datenschutzerklärung – Psychotherapie Praxis Lübeck | Paulina Tolk</title>
         <meta
           name="description"
@@ -127,12 +174,12 @@ const Policy = () => {
                   23552 Lübeck
                   <br />
                   Mobil:{' '}
-                  <MuiLink href="tel:017643608599" underline="none" sx={{ color: '#383838' }}>
+                  <MuiLink href="tel:017643608599" underline="none" color={"#737373"}>
                     0176 43 60 85 99
                   </MuiLink>
                   <br />
                   E-Mail:{' '}
-                  <MuiLink href="mailto:therapie.tolk@gmail.com" underline="none" sx={{ color: '#383838' }}>
+                  <MuiLink href="mailto:therapie.tolk@gmail.com" underline="none" color={"#737373"}>
                     therapie.tolk@gmail.com
                   </MuiLink>
                 </Typography>
@@ -261,7 +308,7 @@ const Policy = () => {
           </Box>
         )}
       </Box>
-    </>
+    </ThemeProvider>
   );
 };
 

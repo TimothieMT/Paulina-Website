@@ -3,6 +3,53 @@ import { Box, Typography, Link, Stack, useMediaQuery, useTheme } from '@mui/mate
 import Grid from '@mui/material/Grid2';
 import { styled } from '@mui/material/styles';
 import Grid2 from '@mui/material/Grid2';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const customTheme = createTheme({
+  typography: {
+    h4: {
+      fontFamily: 'medium, sans-serif',
+      fontSize: '2rem',
+    },
+    h1: {
+      fontFamily: 'medium, sans-serif',
+      fontSize: '2rem',
+
+    },
+    h2: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1.5rem',
+    },
+    h6: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1.5rem',
+    },
+    h5: {
+      fontFamily: 'medium, sans-serif',
+      fontSize: '1.5rem',
+    },
+    p: {
+      fontFamily: 'thin, sans-serif',
+      fontSize: '0.8rem',
+      color: '#737373',
+    },
+    body1: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1rem',
+      color: '#737373',
+    },
+    subtitle1: {
+      fontFamily: 'light, sans-serif',
+      fontSize: '1.1rem',
+      color: '#737373',
+    },
+    body2: {
+      fontFamily: 'light, sans-serif',
+      fontSize: '1rem',
+      color: '#737373',
+    }
+  },
+});
 
 const CleanGrid = styled(Grid2, {
   shouldForwardProp: (prop) => prop !== 'item',
@@ -14,15 +61,15 @@ const Footer = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <>
-      <Helmet>
+    <ThemeProvider theme={customTheme}>
+    <Helmet>
         <title>Therapie Paulina Tolk – Footer</title>
         <meta
           name="description"
           content="Footer der Website von Therapie Paulina Tolk – Psychotherapie in Lübeck. Alle Rechte vorbehalten."
         />
       </Helmet>
-      <Box component="footer" position="sticky" sx={{ width: '100%' }}>
+      <Box component="footer" position="sticky" marginTop={3} sx={{ width: '100%' }}>
         <Grid
           container
           justifyContent="space-between"
@@ -60,13 +107,13 @@ const Footer = () => {
                   }
                 }}
               >
-                <Link href="/contact" sx={{ '&:hover': { color: '#85ab7f' } }}>
+                <Link href="/contact" variant="subtitle1" sx={{ '&:hover': { color: '#85ab7f' } }}>
                   Kontakt
                 </Link>
-                <Link href="/policy" sx={{ '&:hover': { color: '#85ab7f' } }}>
+                <Link href="/policy" variant="subtitle1" sx={{ '&:hover': { color: '#85ab7f' } }}>
                   Datenschutz
                 </Link>
-                <Link href="/impressum" sx={{ '&:hover': { color: '#85ab7f' } }}>
+                <Link href="/impressum" variant="subtitle1" sx={{ '&:hover': { color: '#85ab7f' } }}>
                   Impressum
                 </Link>
               </Stack>
@@ -82,7 +129,7 @@ const Footer = () => {
           © {currentYear} Therapie Paulina Tolk. Alle Rechte vorbehalten.
         </Typography>
       </Box>
-    </>
+    </ThemeProvider>
   );
 };
 

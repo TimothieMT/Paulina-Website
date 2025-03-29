@@ -1,6 +1,53 @@
 import { Helmet } from 'react-helmet';
 import { Box, Card, CardActionArea, CardContent, Typography } from '@mui/material';
 import Grid2 from '@mui/material/Grid2';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const customTheme = createTheme({
+  typography: {
+    h4: {
+      fontFamily: 'medium, sans-serif',
+      fontSize: '2rem',
+    },
+    h1: {
+      fontFamily: 'medium, sans-serif',
+      fontSize: '2rem',
+
+    },
+    h2: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1.5rem',
+    },
+    h6: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1.5rem',
+    },
+    h5: {
+      fontFamily: 'medium, sans-serif',
+      fontSize: '1.5rem',
+    },
+    p: {
+      fontFamily: 'thin, sans-serif',
+      fontSize: '0.8rem',
+      color: '#737373',
+    },
+    body1: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1rem',
+      color: '#737373',
+    },
+    subtitle1: {
+      fontFamily: 'light, sans-serif',
+      fontSize: '1.1rem',
+      color: '#737373',
+    },
+    body2: {
+      fontFamily: 'light, sans-serif',
+      fontSize: '1rem',
+      color: '#737373',
+    }
+  },
+});
 
 const services = [
   {
@@ -21,8 +68,8 @@ const services = [
 
 const Pricing = () => {
   return (
-    <>
-      <Helmet>
+    <ThemeProvider theme={customTheme}>
+    <Helmet>
         <title>Kostenübersicht – Psychotherapie in Lübeck | Paulina Tolk</title>
         <meta
           name="description"
@@ -75,7 +122,7 @@ const Pricing = () => {
                     <Typography gutterBottom variant="h5" component="div">
                       {service.title}
                     </Typography>
-                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                    <Typography variant="body2" sx={{ color: 'text.secondary', marginBottom: 2 }}>
                       {service.head}
                     </Typography>
                     <Typography variant="h6" sx={{ color: 'text.secondary' }}>
@@ -84,9 +131,6 @@ const Pricing = () => {
                     <Typography variant="body2" sx={{ color: 'text.secondary', mt: 3 }}>
                       {service.description}
                     </Typography>
-                    <Typography variant="body2" sx={{ color: 'text.secondary', fontSize: '8px', mt: 2 }}>
-                      {service.subtitle}
-                    </Typography>
                   </CardContent>
                 </CardActionArea>
               </Card>
@@ -94,7 +138,7 @@ const Pricing = () => {
           </Grid2>
         </Box>
       </Box>
-    </>
+    </ThemeProvider>
   );
 };
 

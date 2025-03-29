@@ -1,9 +1,56 @@
 import { Helmet } from 'react-helmet';
 import { Box, Typography, Link as MuiLink } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const customTheme = createTheme({
+  typography: {
+    h4: {
+      fontFamily: 'medium, sans-serif',
+      fontSize: '2rem',
+    },
+    h1: {
+      fontFamily: 'medium, sans-serif',
+      fontSize: '2rem',
+
+    },
+    h2: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1.5rem',
+    },
+    h6: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1.5rem',
+    },
+    h5: {
+      fontFamily: 'medium, sans-serif',
+      fontSize: '1.5rem',
+    },
+    p: {
+      fontFamily: 'thin, sans-serif',
+      fontSize: '0.8rem',
+      color: '#737373',
+    },
+    body1: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1rem',
+      color: '#737373',
+    },
+    subtitle1: {
+      fontFamily: 'light, sans-serif',
+      fontSize: '1.1rem',
+      color: '#737373',
+    },
+    body2: {
+      fontFamily: 'light, sans-serif',
+      fontSize: '1rem',
+      color: '#737373',
+    }
+  },
+});
 
 const Impressum = () => {
   return (
-    <>
+    <ThemeProvider theme={customTheme}>
       <Helmet>
         <title>Impressum – Psychotherapie Praxis Lübeck | Paulina Tolk</title>
         <meta
@@ -87,6 +134,7 @@ const Impressum = () => {
               </MuiLink>
             </Typography>
           </Box>
+
 
           {/* Inhaltlich Verantwortlicher */}
           <Box sx={{ mt: 5 }}>
@@ -202,7 +250,7 @@ const Impressum = () => {
           </Box>
         </Box>
       </Box>
-    </>
+    </ThemeProvider>
   );
 };
 
