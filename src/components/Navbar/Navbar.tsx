@@ -12,7 +12,6 @@ import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 import { useMediaQuery, useTheme } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Slide from '@mui/material/Slide';
 
 const customTheme = createTheme({
   typography: {
@@ -113,13 +112,15 @@ function Navbar() {
                 key={page.name}
                 component={Link}
                 to={page.path}
-                variant="subtitle1"
+                variant="text"
                 sx={{
                   color: '#737373',
                   '&:hover': { backgroundColor: '#85ab7f', color: '#efeeee' },
                 }}
               >
-                {page.name}
+                <Typography variant="subtitle1">
+                  {page.name}
+                </Typography>
               </Button>
             ))}
           </Box>
@@ -140,14 +141,16 @@ function Navbar() {
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <Button
               component={Link}
-              variant="subtitle1"
+              variant="text"
               to="/contact"
               sx={{
                 color: '#737373',
                 '&:hover': { backgroundColor: '#85ab7f', color: '#efeeee' },
               }}
             >
-              Termin vereinbaren
+              <Typography variant="subtitle1">
+                Termin vereinbaren
+              </Typography>
             </Button>
           </Box>
 
@@ -164,11 +167,6 @@ function Navbar() {
               anchorEl={anchorElNav}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              TransitionComponent={Slide}
-              TransitionProps={{
-                direction: 'down',
-                timeout: { enter: 500, exit: 300 }, // Angepasste Dauer für sanftere Animation
-              }}
               sx={{
                 '& .MuiPaper-root': {
                   backgroundColor: '#85ab7f',
