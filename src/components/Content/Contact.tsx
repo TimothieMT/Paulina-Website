@@ -342,7 +342,7 @@ function MainContactFullWidth() {
         >
           <Box
             component="img"
-            src="public/place.png"
+            src="/place.png"
             alt="Ein schmaler, geschwungener Sandweg führt durch einen lichten Wald mit hohen, schlanken Bäumen entlang einer sanften, grasbewachsenen Böschung direkt am Meer."
             sx={{
               width: '100%',
