@@ -10,7 +10,6 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Grid2 from '@mui/material/Grid2';
-import SendIcon from '@mui/icons-material/Send';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const customTheme = createTheme({
@@ -206,19 +205,13 @@ function MainContactFullWidth() {
                   </Typography>
                   <Box component="ul" p={3} sx={{ listStyleType: 'none', pl: 0, m: 0 }}>
                     <Box component="li">
-                      <Typography variant="subtitle1" component="span">
-                        <strong>Montag: 11 - 12 Uhr</strong>
-                      </Typography>
+                      <Typography variant="subtitle1" component="span" fontFamily={'medium'}>Montag: 11 - 12 Uhr</Typography>
                     </Box>
                     <Box component="li">
-                      <Typography variant="subtitle1" component="span">
-                        <strong>Dienstag: 11 - 12 Uhr</strong>
-                      </Typography>
+                      <Typography variant="subtitle1" component="span" fontFamily={'medium'}>Dienstag: 11 - 12 Uhr</Typography>
                     </Box>
                     <Box component="li">
-                      <Typography variant="subtitle1" component="span">
-                        <strong>Donerstag: 11 - 12 Uhr</strong>
-                      </Typography>
+                      <Typography variant="subtitle1" component="span" fontFamily={'medium'}>Donerstag: 11 - 12 Uhr</Typography>
                     </Box>
                   </Box>
                 </Box>
@@ -261,7 +254,6 @@ function MainContactFullWidth() {
                         color: '#383838',
                         '&:hover': { backgroundColor: '#85ab7f', color: '#fff' },
                       }}
-                      endIcon={<SendIcon />}
                     >
                       Absenden
                     </Button>
@@ -277,7 +269,7 @@ function MainContactFullWidth() {
                 </FormBox>
               </Box>
 
-              <Box sx={{ mb: 4 }}>
+              <Box>
                 <Box component="section" aria-labelledby="standort-heading">
                   <Typography variant="h6" component="h3" gutterBottom id="standort-heading">
                     Standort
@@ -294,14 +286,14 @@ function MainContactFullWidth() {
             <CleanGrid>
               <Box
                 component="address"
-                sx={{ borderRadius: 1, height: '100%', fontStyle: 'normal', mt: 4 }}
+                sx={{ borderRadius: 1, height: '100%', fontStyle: 'normal' }}
               >
                 <Typography component="p">M.Sc. Psych., HP Psych. Paulina Tolk</Typography>
                 <Typography component="p">Systemische Therapeutin und Beraterin (SG)</Typography>
                 <Typography component="p">Praxis für Psychotherapie</Typography>
                 <Typography component="p">Beckergrube 2</Typography>
                 <Typography component="p">23552 Lübeck</Typography>
-                <Box component="div" sx={{ mt: 2 }}>
+                <Box component="div">
                   <Typography component="p">
                     Mobil:{' '}
                     <MuiLink

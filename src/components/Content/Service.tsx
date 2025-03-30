@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 import { Box, Typography, Card, CardMedia, CardContent, CardActionArea } from '@mui/material';
-import Grid2 from '@mui/material/Grid2';
+import Grid from '@mui/material/Grid2';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const customTheme = createTheme({
@@ -60,7 +60,7 @@ const services = [
     title: 'Paartherapie',
     description:
       'Die Paartherapie bietet Ihnen einen sicheren Raum, um Kommunikationsprobleme zu identifizieren und gemeinsam nachhaltige Lösungen zu erarbeiten. Durch professionelle Unterstützung können Sie Ihre Beziehung stärken und langfristige Harmonie erreichen.',
-    image: '/entspannt.jpg',
+    image: '/couple.jpg',
   },
   {
     title: 'Persönlichkeitsentwicklung',
@@ -125,7 +125,8 @@ const Service = () => {
             Individuelle psychologische Beratung für Ihr Wohlbefinden – von Therapie bis Persönlichkeitsentwicklung.
           </Typography>
 
-          <Grid2
+          <Grid
+            size={{ xs: 12, md: 5 }}
             container
             spacing={4}
             component="ul"
@@ -151,7 +152,7 @@ const Service = () => {
                   </CardActionArea>
                 </Card>
             ))}
-          </Grid2>
+          </Grid>
         </Box>
       </Box>
     </ThemeProvider>

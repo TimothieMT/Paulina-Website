@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
-import { Box, Typography, useTheme, useMediaQuery } from '@mui/material';
-import Grid from '@mui/material/Grid';
+import { Box, Typography, Divider } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -50,7 +50,7 @@ const customTheme = createTheme({
     },
     body3: {
       fontFamily: 'medium, sans-serif',
-      fontSize: '1rem',
+      fontSize: '1.3rem',
       color: '#85ab7f',
     }
   },
@@ -66,8 +66,6 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const Content = () => {
-  const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <ThemeProvider theme={customTheme}>
@@ -79,76 +77,99 @@ const Content = () => {
         />
       </Helmet>
 
-      {/* Bild volle Breite, Höhe automatisch */}
-      <Box
-        component="img"
-        src="/forestBeach.jpg"
-        alt="Ein schmaler, geschwungener Sandweg führt durch einen lichten Wald mit hohen, schlanken Bäumen entlang einer sanften, grasbewachsenen Böschung direkt am Meer."
+      {/* Grid-Container mit responsiven Abständen */}
+      <Grid
+        container
+        spacing={3}
+        marginBottom={7}
+        marginTop={5}
         sx={{
-          width: '100%',
-          height: '300px',
-          objectFit: 'cover',
-        }}
-      />
-
-      {/* Zitat zentriert */}
-      <Box
-        component="section"
-        sx={{
-          backgroundColor: '#efeeee',
-          color: '#737373',
-          width: { xs: '90%', sm: '70%' },
-          p: { xs: 2, sm: 4 },
-          mx: 'auto',
-          textAlign: 'center',
-          marginBottom: 5,
-          marginTop: 7,
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-around',
         }}
       >
-        <Typography variant={isSmallScreen ? 'h5' : 'h3'} component="blockquote" fontFamily={'light, sans-serif'} letterSpacing={0.8} lineHeight={1.5}>
-          „Verstehen kann man das Leben nur rückwärts. Leben muss man es vorwärts.“
-        </Typography>
-        <Typography
-          mt={2}
-          fontFamily={'thin, sans-serif'}
-          component="cite"
-          sx={{ textAlign: 'right', width: '100%' }}
-        >
-          - Søren Kierkegaard -
-        </Typography>
-      </Box>
+        <Grid size={{ xs: 12, md: 5 }}>
+          <Item sx={{ backgroundColor: '#efeeee', boxShadow: 'none' }}>
+            <Box
+              component="img"
+              src="/forestBeach.jpg"
+              alt="Ein schmaler, geschwungener Sandweg führt durch einen lichten Wald mit hohen, schlanken Bäumen entlang einer sanften, grasbewachsenen Böschung direkt am Meer."
+              sx={{
+                width: '100%',
+                height: '600px',
+                objectFit: 'cover',
+                borderRadius: '10px',
+              }}
+            />
+          </Item>
+        </Grid>
+        <Grid size={{ xs: 12, md: 7 }} width={'600px'} alignContent={'center'}>
+          <Item sx={{ backgroundColor: '#efeeee', boxShadow: 'none', width: '100%' }}>
+            <Typography variant="body1" textAlign={'start'} mb={3} letterSpacing={3} lineHeight={1.5} gutterBottom>
+              <Typography variant="body3">Die systemische Therapie</Typography> ist ein Ansatz, der den Menschen nicht isoliert, sondern als Teil eines größeren sozialen Kontexts betrachtet.
+            </Typography>
+            <Typography variant="body1" textAlign={'start'} mb={3} letterSpacing={3} lineHeight={1.5} gutterBottom>
+              Im Mittelpunkt stehen die Wechselwirkungen in Familien, Partnerschaften und anderen sozialen Gruppen, die oft den Kern individueller Probleme bilden.
+            </Typography>
+            <Typography variant="body1" textAlign={'start'} mb={3} letterSpacing={3} lineHeight={1.5} gutterBottom>
+              Durch gezielte Methoden wie zirkuläres Fragen, Reframing und Aufstellungstechniken werden Kommunikationsmuster und <Typography variant="body3">Interaktionsstrukturen analysiert und verändert</Typography>.
+            </Typography>
+            <Typography variant="body1" textAlign={'start'} mb={3} letterSpacing={3} lineHeight={1.5} gutterBottom>
+              Dieser Ansatz betont, dass jeder Beteiligte sowohl Ursache als auch Wirkung sein kann – so werden Schuldzuweisungen vermieden und gemeinsame Lösungswege gefunden.
+            </Typography>
+            <Typography variant="body1" textAlign={'start'} mb={3} letterSpacing={3} lineHeight={1.5} gutterBottom>
+              Insgesamt unterstützt die systemische Therapie dabei, Konflikte zu lösen, <Typography variant="body3">gesündere Beziehungsstrukturen zu entwickeln</Typography> und nachhaltige Veränderungen im gesamten System zu bewirken.
+            </Typography>
+          </Item>
+        </Grid>
+      </Grid>
+      <Divider/>
 
       {/* Grid-Container mit responsiven Abständen */}
       <Grid
         container
         spacing={3}
         marginBottom={7}
+        marginTop={5}
+        sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-around',
+        }}
       >
-        <Grid item xs={12} md={4}>
-          <Item sx={{ backgroundColor: '#efeeee', boxShadow: 'none' }}>
-            <Typography variant="body1" textAlign={'start'} mb={3} gutterBottom>
+        <Grid size={{ xs: 12, md: 5 }} width={'600px'} alignContent={'center'}>
+          <Item sx={{ backgroundColor: '#efeeee', boxShadow: 'none', width: '100%' }}>
+            <Typography variant="body1" textAlign={'start'} mb={3} letterSpacing={3} lineHeight={1.5} gutterBottom>
               <Typography variant="body3">Die systemische Therapie</Typography> ist ein Ansatz, der den Menschen nicht isoliert, sondern als Teil eines größeren sozialen Kontexts betrachtet.
             </Typography>
-            <Typography variant="body1" textAlign={'start'} mb={3} gutterBottom>
+            <Typography variant="body1" textAlign={'start'} mb={3} letterSpacing={3} lineHeight={1.5} gutterBottom>
               Im Mittelpunkt stehen die Wechselwirkungen in Familien, Partnerschaften und anderen sozialen Gruppen, die oft den Kern individueller Probleme bilden.
             </Typography>
-          </Item>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Item sx={{ backgroundColor: '#efeeee', boxShadow: 'none' }}>
-            <Typography variant="body1" textAlign={'start'} mb={3} gutterBottom>
+            <Typography variant="body1" textAlign={'start'} mb={3} letterSpacing={3} lineHeight={1.5} gutterBottom>
               Durch gezielte Methoden wie zirkuläres Fragen, Reframing und Aufstellungstechniken werden Kommunikationsmuster und <Typography variant="body3">Interaktionsstrukturen analysiert und verändert</Typography>.
             </Typography>
-            <Typography variant="body1" textAlign={'start'} mb={3} gutterBottom>
+            <Typography variant="body1" textAlign={'start'} mb={3} letterSpacing={3} lineHeight={1.5} gutterBottom>
               Dieser Ansatz betont, dass jeder Beteiligte sowohl Ursache als auch Wirkung sein kann – so werden Schuldzuweisungen vermieden und gemeinsame Lösungswege gefunden.
+            </Typography>
+            <Typography variant="body1" textAlign={'start'} mb={3} letterSpacing={3} lineHeight={1.5} gutterBottom>
+              Insgesamt unterstützt die systemische Therapie dabei, Konflikte zu lösen, <Typography variant="body3">gesündere Beziehungsstrukturen zu entwickeln</Typography> und nachhaltige Veränderungen im gesamten System zu bewirken.
             </Typography>
           </Item>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 7 }}>
           <Item sx={{ backgroundColor: '#efeeee', boxShadow: 'none' }}>
-            <Typography variant="body1" textAlign={'start'} mb={3} gutterBottom>
-              Insgesamt unterstützt die systemische Therapie dabei, Konflikte zu lösen, <Typography variant="body3">gesündere Beziehungsstrukturen zu entwickeln</Typography> und nachhaltige Veränderungen im gesamten System zu bewirken.
-            </Typography>
+            <Box
+              component="img"
+              src="/forestBeach.jpg"
+              alt="Ein schmaler, geschwungener Sandweg führt durch einen lichten Wald mit hohen, schlanken Bäumen entlang einer sanften, grasbewachsenen Böschung direkt am Meer."
+              sx={{
+                width: '100%',
+                height: '600px',
+                objectFit: 'cover',
+                borderRadius: '10px',
+              }}
+            />
           </Item>
         </Grid>
       </Grid>

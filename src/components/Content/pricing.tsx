@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 import { Box, Card, CardActionArea, CardContent, Typography } from '@mui/material';
-import Grid2 from '@mui/material/Grid2';
+import Grid from '@mui/material/Grid2';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const customTheme = createTheme({
@@ -109,7 +109,8 @@ const Pricing = () => {
           <Typography component="p">
             Die Kosten der Systemischen Therapie trägt der Klient/in auf Selbstzahlerbasis in Eigenleistung.
           </Typography>
-          <Grid2
+          <Grid
+            size={{ xs: 12, md: 6 }}
             container
             spacing={4}
             component="ul"
@@ -135,7 +136,7 @@ const Pricing = () => {
                 </CardActionArea>
               </Card>
             ))}
-          </Grid2>
+          </Grid>
         </Box>
       </Box>
     </ThemeProvider>

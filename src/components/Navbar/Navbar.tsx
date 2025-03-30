@@ -105,7 +105,7 @@ function Navbar() {
           <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3 }}>
             {[
               { name: 'Kostenübersicht', path: '/overview' },
-              { name: 'Werdegang', path: '/vita' },
+              { name: 'Über mich', path: '/vita' },
               { name: 'Leistungen', path: '/service' },
             ].map((page) => (
               <Button

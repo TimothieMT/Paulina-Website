@@ -11,7 +11,6 @@ const customTheme = createTheme({
     h1: {
       fontFamily: 'medium, sans-serif',
       fontSize: '2rem',
-
     },
     h2: {
       fontFamily: 'regular, sans-serif',
@@ -51,11 +50,11 @@ const customTheme = createTheme({
 const Vita = () => {
   return (
     <ThemeProvider theme={customTheme}>
-    <Helmet>
-        <title>Vita – Werdegang und Qualifikationen | Psychotherapie Lübeck</title>
+      <Helmet>
+        <title>Vita – Mein Werdegang & Qualifikationen | Psychotherapie Lübeck</title>
         <meta
           name="description"
-          content="Ein Überblick über den Werdegang, Qualifikationen, Weiterbildungen und berufliche Erfahrung von M.Sc. Psych., HP Psych. Paulina Tolk – Ihre Expertin für Psychotherapie in Lübeck."
+          content="Ein persönlicher Einblick in meinen Werdegang, Qualifikationen und beruflichen Erfahrungen. Erfahren Sie, wie meine Leidenschaft für Psychotherapie mich geprägt hat."
         />
       </Helmet>
       <Box
@@ -85,28 +84,18 @@ const Vita = () => {
           }}
         >
           <header>
-            <Typography
-              variant="h4"
-              component="h2"
-              gutterBottom
-            >
-              Werdegang und Qualifikationen
-            </Typography>
+            <Typography variant="h4" component="h2" gutterBottom>Über Mich</Typography>
           </header>
 
           <section aria-labelledby="qualifications">
-            <Typography
-              id="qualifications"
-              component="p"
-              sx={{ mt: 5 }}
-            >
-              Seit 2023: Ausbildung zur Verhaltenstherapeutin (BFA Berlin) mit Schwerpunkt auf Einzel- und Gruppentherapie.
+            <Typography id="qualifications" component="p" sx={{ mt: 5 }}>
+              Schon immer war es mir ein Herzensanliegen, den Menschen in schwierigen Lebenssituationen beizustehen. Dieser innere Antrieb führte mich 2023 in die Ausbildung zur Verhaltenstherapeutin am BFA Berlin, wo ich lerne, sowohl Einzel- als auch Gruppentherapien wirkungsvoll zu gestalten.
             </Typography>
             <Typography component="p" sx={{ mt: 2 }}>
-              2019-2023: Master of Science in Klinischer- und Gesundheitspsychologie Freie Universität Berlin – Masterarbeit zum Thema Schmerzbewältigung bei Kindern.
+              Von 2019 bis 2023 habe ich meinen Master of Science in Klinischer- und Gesundheitspsychologie an der Freien Universität Berlin absolviert. Meine Masterarbeit, in der ich mich intensiv mit der Schmerzbewältigung bei Kindern beschäftigte, war ein prägender Meilenstein, der meine fachliche und persönliche Entwicklung nachhaltig beeinflusste.
             </Typography>
             <Typography component="p" sx={{ mt: 2 }}>
-              2011-2019: Bachelor of Science in Psychologie Freie Universität Berlin – Schwerpunkt: Gesundheitspsychologie und zwischenmenschliche Beziehungen.
+              Bereits während meines Bachelorstudiums (2011-2019) an der Freien Universität Berlin entwickelte sich meine Leidenschaft für die Psychologie, insbesondere im Bereich der Gesundheitspsychologie und zwischenmenschlichen Beziehungen.
             </Typography>
           </section>
 
@@ -115,25 +104,22 @@ const Vita = () => {
               Weiterbildungen & Zusatzausbildungen
             </Typography>
             <Typography component="p" sx={{ mt: 1 }}>
-              Neben meiner akademischen Laufbahn habe ich mich in verschiedenen therapeutischen Methoden weitergebildet:
+              Um meine fachliche Kompetenz zu erweitern und meinen persönlichen Ansatz zu vertiefen, habe ich mich in verschiedenen therapeutischen Methoden weitergebildet:
             </Typography>
-            <Box
-              component="ul"
-              sx={{ listStyle: 'none', pl: 0, m: 0 }}
-            >
+            <Box component="ul" sx={{ listStyle: 'none', pl: 0, m: 0 }}>
               <Box component="li">
                 <Typography component="p" sx={{ mt: 2 }}>
-                  Systemische Therapie – mit Fokus auf Familien- und Paartherapie
+                  Systemische Therapie – mit Fokus auf die Dynamik in Familien- und Paarbeziehungen.
                 </Typography>
               </Box>
               <Box component="li">
                 <Typography component="p" sx={{ mt: 2 }}>
-                  Klinische Hypnose – Einsatz von Trance und Suggestion in der Psychotherapie
+                  Klinische Hypnose – der Einsatz von Trance und Suggestion, um therapeutische Prozesse zu unterstützen.
                 </Typography>
               </Box>
               <Box component="li">
                 <Typography component="p" sx={{ mt: 2 }}>
-                  Ego-State-Therapie – Arbeit mit Persönlichkeitsanteilen zur Traumabewältigung
+                  Ego-State-Therapie – die Arbeit mit unterschiedlichen Persönlichkeitsanteilen zur Traumabewältigung.
                 </Typography>
               </Box>
             </Box>
@@ -143,58 +129,55 @@ const Vita = () => {
             <Typography variant="h6" component="h2" sx={{ mt: 3 }}>
               Berufliche Erfahrung
             </Typography>
-            <Box
-              component="ul"
-              sx={{ listStyle: 'none', pl: 0, m: 0 }}
-            >
+            <Box component="ul" sx={{ listStyle: 'none', pl: 0, m: 0 }}>
               <Box component="li">
                 <Typography component="p" sx={{ mt: 2 }}>
-                  Psychotherapeutische Praxis Dipl.-Psych. Maria Schnell
+                  In der psychotherapeutischen Praxis von Dipl.-Psych. Maria Schnell sammelte ich wertvolle Praxiserfahrungen.
                 </Typography>
               </Box>
               <Box component="li">
                 <Typography component="p">
-                  Verhaltenstherapeutische Einzel- und Gruppensitzungen
+                  Durchführung von verhaltenstherapeutischen Einzel- und Gruppensitzungen, die mir halfen, Theorie und Praxis zu verbinden.
                 </Typography>
               </Box>
               <Box component="li">
                 <Typography component="p" sx={{ mt: 2 }}>
-                  Anwendung klinischer Hypnose bei Angst- und Belastungsstörungen
+                  Einsatz klinischer Hypnose bei der Behandlung von Angst- und Belastungsstörungen – ein innovativer Ansatz, den ich mit Begeisterung verfolge.
                 </Typography>
               </Box>
               <Box component="li">
                 <Typography component="p" sx={{ mt: 2 }}>
-                  Systemische Beratung für Paare und Familien
+                  Systemische Beratung für Paare und Familien, bei der ich meine empathischen Fähigkeiten weiterentwickeln konnte.
                 </Typography>
               </Box>
               <Box component="li">
                 <Typography component="p" sx={{ mt: 2 }}>
-                  Ambulante Betreuung (Pinel Berlin)
+                  Ambulante Betreuung bei Pinel Berlin – hier lernte ich, wie wichtig ein ganzheitlicher Ansatz im Alltag ist.
                 </Typography>
               </Box>
               <Box component="li">
                 <Typography component="p">
-                  Unterstützung psychisch erkrankter Menschen im Alltag
+                  Unterstützung psychisch erkrankter Menschen im Alltag, was mir zeigte, wie bedeutsam individuelle Hilfe ist.
                 </Typography>
               </Box>
               <Box component="li">
                 <Typography component="p" sx={{ mt: 2 }}>
-                  Entwicklung von Bewältigungsstrategien und Krisenintervention
+                  Entwicklung von Bewältigungsstrategien und Krisenintervention – Erfahrungen, die mich persönlich und fachlich wachsen ließen.
                 </Typography>
               </Box>
               <Box component="li">
                 <Typography component="p" sx={{ mt: 2 }}>
-                  Forschungspraktikum – Humboldt Universität
+                  Forschungspraktikum an der Humboldt Universität, wo ich die wissenschaftliche Basis meiner therapeutischen Arbeit vertiefte.
                 </Typography>
               </Box>
               <Box component="li">
                 <Typography component="p">
-                  Wissenschaftliche Untersuchungen zur Wirkung von Hypnose auf Schmerzempfinden
+                  Wissenschaftliche Untersuchungen zur Wirkung von Hypnose auf das Schmerzempfinden – ein spannendes Feld, das mein Interesse für alternative Therapieansätze weiter beflügelte.
                 </Typography>
               </Box>
               <Box component="li">
                 <Typography component="p" sx={{ mt: 2 }}>
-                  Mitarbeit an klinischen Studien und Datenauswertungen
+                  Mitarbeit an klinischen Studien und Datenauswertungen – hierbei konnte ich meine analytischen Fähigkeiten und mein Engagement für evidenzbasierte Therapie unter Beweis stellen.
                 </Typography>
               </Box>
             </Box>
@@ -205,10 +188,7 @@ const Vita = () => {
               Mein therapeutischer Ansatz
             </Typography>
             <Typography component="p" sx={{ mt: 2 }}>
-              In meiner Arbeit lege ich großen Wert auf eine individuelle und wertschätzende Begleitung. Mein Ansatz kombiniert
-              wissenschaftlich fundierte Methoden der Verhaltenstherapie mit Elementen der systemischen Beratung und Hypnotherapie.
-              Ich glaube daran, dass jeder Mensch über Ressourcen verfügt, die ihm helfen können, schwierige Lebensphasen zu bewältigen.
-              Gemeinsam erarbeiten wir nachhaltige Lösungen, die Ihre persönliche Entwicklung und psychische Gesundheit stärken.
+              Ich bin fest davon überzeugt, dass in jedem Menschen einzigartige Ressourcen schlummern, die es ermöglichen, Herausforderungen zu meistern. Durch die Kombination fundierter verhaltenstherapeutischer Methoden mit systemischen und hypnotherapeutischen Ansätzen begleite ich meine Klient*innen auf ihrem individuellen Weg zu mehr Wohlbefinden. Dieser persönliche Ansatz spiegelt meine Leidenschaft und mein Engagement wider, Menschen in jeder Lebenslage einfühlsam zu unterstützen.
             </Typography>
           </section>
         </Box>
