@@ -17,43 +17,71 @@ const customTheme = createTheme({
     h4: {
       fontFamily: 'medium, sans-serif',
       fontSize: '2rem',
+      letterSpacing: 3,
+      lineHeight: 1.5,
+      color: '#85ab7f',
     },
     h1: {
       fontFamily: 'medium, sans-serif',
       fontSize: '2rem',
+      letterSpacing: 3,
+      lineHeight: 1.5,
 
     },
     h2: {
       fontFamily: 'regular, sans-serif',
       fontSize: '1.5rem',
+      letterSpacing: 3,
+      lineHeight: 1.5,
     },
     h6: {
       fontFamily: 'regular, sans-serif',
       fontSize: '1.5rem',
+      letterSpacing: 3,
+      lineHeight: 1.5,
+      color: '#85ab7f',
     },
     h5: {
       fontFamily: 'medium, sans-serif',
       fontSize: '1.5rem',
+      letterSpacing: 3,
+      lineHeight: 1.5,
+      color: '#85ab7f',
     },
     p: {
       fontFamily: 'thin, sans-serif',
       fontSize: '0.8rem',
       color: '#737373',
+      letterSpacing: 3,
+      lineHeight: 1.5,
     },
     body1: {
       fontFamily: 'regular, sans-serif',
       fontSize: '1rem',
       color: '#737373',
+      letterSpacing: 3,
+      lineHeight: 1.5,
     },
     subtitle1: {
       fontFamily: 'light, sans-serif',
       fontSize: '1.1rem',
       color: '#737373',
+      letterSpacing: 3,
+      lineHeight: 1.5,
     },
     body2: {
       fontFamily: 'light, sans-serif',
       fontSize: '1rem',
       color: '#737373',
+      letterSpacing: 3,
+      lineHeight: 1.5,
+    },
+    body3: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1.5rem',
+      letterSpacing: 3,
+      lineHeight: 1.5,
+      color: '#85ab7f',
     }
   },
 });
@@ -141,7 +169,7 @@ function MainContactFullWidth() {
           "postalCode": "23552",
           "addressCountry": "DE"
         },
-        "telephone": "+4917643608599",
+        "telephone": "0157 55504410",
         "email": "therapie.tolk@gmail.com",
         "openingHours": [
           "Mo 11:00-12:00",
@@ -297,7 +325,7 @@ function MainContactFullWidth() {
                   <Typography component="p">
                     Mobil:{' '}
                     <MuiLink
-                      href="tel:017643608599"
+                      href="tel:+49157 55504410"
                       underline="none"
                       sx={{
                         backgroundColor: 'transparent',
@@ -305,7 +333,7 @@ function MainContactFullWidth() {
                         '&:hover': { color: '#85ab7f' },
                       }}
                     >
-                      0176 43 60 85 99
+                      0157 55504410
                     </MuiLink>
                   </Typography>
                   <Typography component="p">

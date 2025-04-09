@@ -8,43 +8,71 @@ const customTheme = createTheme({
     h4: {
       fontFamily: 'medium, sans-serif',
       fontSize: '2rem',
+      letterSpacing: 3,
+      lineHeight: 1.5,
+      color: '#85ab7f',
     },
     h1: {
       fontFamily: 'medium, sans-serif',
       fontSize: '2rem',
+      letterSpacing: 3,
+      lineHeight: 1.5,
 
     },
     h2: {
       fontFamily: 'regular, sans-serif',
       fontSize: '1.5rem',
+      letterSpacing: 3,
+      lineHeight: 1.5,
     },
     h6: {
       fontFamily: 'regular, sans-serif',
       fontSize: '1.5rem',
+      letterSpacing: 3,
+      lineHeight: 1.5,
+      color: '#85ab7f',
     },
     h5: {
       fontFamily: 'medium, sans-serif',
       fontSize: '1.5rem',
+      letterSpacing: 3,
+      lineHeight: 1.5,
+      color: '#85ab7f',
     },
     p: {
       fontFamily: 'thin, sans-serif',
       fontSize: '0.8rem',
       color: '#737373',
+      letterSpacing: 3,
+      lineHeight: 1.5,
     },
     body1: {
       fontFamily: 'regular, sans-serif',
       fontSize: '1rem',
       color: '#737373',
+      letterSpacing: 3,
+      lineHeight: 1.5,
     },
     subtitle1: {
       fontFamily: 'light, sans-serif',
       fontSize: '1.1rem',
       color: '#737373',
+      letterSpacing: 3,
+      lineHeight: 1.5,
     },
     body2: {
       fontFamily: 'light, sans-serif',
       fontSize: '1rem',
       color: '#737373',
+      letterSpacing: 3,
+      lineHeight: 1.5,
+    },
+    body3: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1.5rem',
+      letterSpacing: 3,
+      lineHeight: 1.5,
+      color: '#85ab7f',
     }
   },
 });
@@ -63,7 +91,8 @@ const services = [
     image: '/couple.jpg',
   },
   {
-    title: 'Persönlichkeitsentwicklung',
+    title: 'Persönlichkeits-' +
+      'entwicklung',
     description:
       'Unsere Angebote zur Persönlichkeitsentwicklung fördern Ihre individuelle Entfaltung und unterstützen Sie dabei, Ihr Selbstbewusstsein nachhaltig zu stärken. Entdecken Sie Ihre Potenziale und lernen Sie, diese gezielt für Ihre persönliche Weiterentwicklung einzusetzen.',
     image: '/persoenlichkeitsentwicklung.jpg',
@@ -133,7 +162,7 @@ const Service = () => {
             sx={{ listStyle: 'none', p: 0, m: 0, justifyContent: 'center' }}
           >
             {services.map((service, index) => (
-                <Card sx={{ maxWidth: 380, backgroundColor: '#efeeee', border: '1px solid #85ab7f', height: 'auto' }} key={index}>
+                <Card sx={{ maxWidth: 380, backgroundColor: '#efeeee', border: '1px solid #737373', height: 'auto' }} key={index}>
                   <CardActionArea>
                     <CardMedia
                       component="img"
@@ -142,7 +171,7 @@ const Service = () => {
                       alt={service.title}
                     />
                     <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
+                      <Typography gutterBottom variant="body3" component="div">
                         {service.title}
                       </Typography>
                       <Typography variant="body2" sx={{ color: 'text.secondary' }}>

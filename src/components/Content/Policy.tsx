@@ -8,43 +8,71 @@ const customTheme = createTheme({
     h4: {
       fontFamily: 'medium, sans-serif',
       fontSize: '2rem',
+      letterSpacing: 3,
+      lineHeight: 1.5,
+      color: '#85ab7f',
     },
     h1: {
       fontFamily: 'medium, sans-serif',
       fontSize: '2rem',
+      letterSpacing: 3,
+      lineHeight: 1.5,
 
     },
     h2: {
       fontFamily: 'regular, sans-serif',
       fontSize: '1.5rem',
+      letterSpacing: 3,
+      lineHeight: 1.5,
     },
     h6: {
       fontFamily: 'regular, sans-serif',
       fontSize: '1.5rem',
+      letterSpacing: 3,
+      lineHeight: 1.5,
+      color: '#85ab7f',
     },
     h5: {
       fontFamily: 'medium, sans-serif',
       fontSize: '1.5rem',
+      letterSpacing: 3,
+      lineHeight: 1.5,
+      color: '#85ab7f',
     },
     p: {
       fontFamily: 'thin, sans-serif',
       fontSize: '0.8rem',
       color: '#737373',
+      letterSpacing: 3,
+      lineHeight: 1.5,
     },
     body1: {
       fontFamily: 'regular, sans-serif',
       fontSize: '1rem',
       color: '#737373',
+      letterSpacing: 3,
+      lineHeight: 1.5,
     },
     subtitle1: {
       fontFamily: 'light, sans-serif',
       fontSize: '1.1rem',
       color: '#737373',
+      letterSpacing: 3,
+      lineHeight: 1.5,
     },
     body2: {
       fontFamily: 'light, sans-serif',
       fontSize: '1rem',
       color: '#737373',
+      letterSpacing: 3,
+      lineHeight: 1.5,
+    },
+    body3: {
+      fontFamily: 'regular, sans-serif',
+      fontSize: '1.5rem',
+      letterSpacing: 3,
+      lineHeight: 1.5,
+      color: '#85ab7f',
     }
   },
 });
@@ -174,8 +202,8 @@ const Policy = () => {
                   23552 Lübeck
                   <br />
                   Mobil:{' '}
-                  <MuiLink href="tel:017643608599" underline="none" color={"#737373"}>
-                    0176 43 60 85 99
+                  <MuiLink href="tel:+49157 55504410" underline="none" color={"#737373"}>
+                    0157 55504410
                   </MuiLink>
                   <br />
                   E-Mail:{' '}
