@@ -118,17 +118,24 @@ const Content = () => {
               component="img"
               src="/forestBeach.jpg"
               alt="Ein schmaler, geschwungener Sandweg führt durch einen lichten Wald mit hohen, schlanken Bäumen entlang einer sanften, grasbewachsenen Böschung direkt am Meer."
-              height={{ xs: 'auto', md: '900px' }}
+              height={{ xs: 'auto', md: '1000px' }}
               sx={{
                 width: '100%',
                 objectFit: 'cover',
-                borderRadius: '10px',
+                borderRadius: '6  px',
               }}
             />
           </Item>
         </Grid>
-        <Grid size={{ xs: 12, md: 7 }} width={'600px'} alignContent={'center'}>
-          <Item sx={{ backgroundColor: '#efeeee', boxShadow: 'none', width: '100%' }}>
+        <Grid
+          size={{ xs: 12, md: 7 }}
+          width={'600px'}
+          alignContent={'center'}
+          sx={{
+            paddingLeft: { xs: '40px', md: '0px' },
+          }}
+        >
+          <Item sx={{ backgroundColor: '#efeeee', boxShadow: 'none', width: '80%' }}>
             <Typography variant="body1" textAlign={'start'} mb={3} gutterBottom>
               <Typography variant="body3">Herzlich willkommen!</Typography>
             </Typography>

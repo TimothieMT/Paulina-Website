@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet';
-import { Box, Typography } from '@mui/material';
+import { Box, Divider, Typography } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const customTheme = createTheme({
@@ -118,14 +118,34 @@ const Vita = () => {
 
           <section aria-labelledby="qualifications">
             <Typography id="qualifications" component="p" sx={{ mt: 5 }}>
-              Schon immer war es mir ein Herzensanliegen, den Menschen in schwierigen Lebenssituationen beizustehen. Dieser innere Antrieb führte mich 2023 in die Ausbildung zur Verhaltenstherapeutin am BFA Berlin, wo ich lerne, sowohl Einzel- als auch Gruppentherapien wirkungsvoll zu gestalten.
+              Schon immer war es mir ein Herzensanliegen, den Menschen in schwierigen Lebenssituationen beizustehen.
+              Dieser innere Antrieb führte mich 2023 in die Ausbildung zur Verhaltenstherapeutin am BFA Berlin, wo ich
+              lerne, sowohl Einzel- als auch Gruppentherapien wirkungsvoll zu gestalten.
             </Typography>
             <Typography component="p" sx={{ mt: 2 }}>
-              Von 2019 bis 2023 habe ich meinen Master of Science in Klinischer- und Gesundheitspsychologie an der Freien Universität Berlin absolviert. Meine Masterarbeit, in der ich mich intensiv mit der Schmerzbewältigung bei Kindern beschäftigte, war ein prägender Meilenstein, der meine fachliche und persönliche Entwicklung nachhaltig beeinflusste.
+              Von 2019 bis 2023 habe ich meinen Master of Science in Klinischer- und Gesundheitspsychologie an der
+              Freien Universität Berlin absolviert. Meine Masterarbeit, in der ich mich intensiv mit der
+              Schmerzbewältigung bei Kindern beschäftigte, war ein prägender Meilenstein, der meine fachliche und
+              persönliche Entwicklung nachhaltig beeinflusste.
             </Typography>
             <Typography component="p" sx={{ mt: 2 }}>
-              Bereits während meines Bachelorstudiums (2011-2019) an der Freien Universität Berlin entwickelte sich meine Leidenschaft für die Psychologie, insbesondere im Bereich der Gesundheitspsychologie und zwischenmenschlichen Beziehungen.
+              Bereits während meines Bachelorstudiums (2011-2019) an der Freien Universität Berlin entwickelte sich
+              meine Leidenschaft für die Psychologie, insbesondere im Bereich der Gesundheitspsychologie und
+              zwischenmenschlichen Beziehungen.
             </Typography>
+          </section>
+          <section>
+            <Typography variant="h6" component="h2" sx={{ mt: 5 }}>
+              Mein therapeutischer Ansatz
+            </Typography>
+            <Typography component="p" sx={{ mt: 2 }}>
+              Ich bin fest davon überzeugt, dass in jedem Menschen einzigartige Ressourcen schlummern, die es
+              ermöglichen, Herausforderungen zu meistern. Durch die Kombination fundierter verhaltenstherapeutischer
+              Methoden mit systemischen und hypnotherapeutischen Ansätzen begleite ich meine Klient*innen auf ihrem
+              individuellen Weg zu mehr Wohlbefinden. Dieser persönliche Ansatz spiegelt meine Leidenschaft und mein
+              Engagement wider, Menschen in jeder Lebenslage einfühlsam zu unterstützen.
+            </Typography>
+            <Divider sx={{ mt: 5, mb: 2 }} />
           </section>
 
           <section>
@@ -133,7 +153,8 @@ const Vita = () => {
               Weiterbildungen & Zusatzausbildungen
             </Typography>
             <Typography component="p" sx={{ mt: 1 }}>
-              Um meine fachliche Kompetenz zu erweitern und meinen persönlichen Ansatz zu vertiefen, habe ich mich in verschiedenen therapeutischen Methoden weitergebildet:
+              Um meine fachliche Kompetenz zu erweitern und meinen persönlichen Ansatz zu vertiefen, habe ich mich in
+              verschiedenen therapeutischen Methoden weitergebildet:
             </Typography>
             <Box component="ul" sx={{ listStyle: 'none', pl: 0, m: 0 }}>
               <Box component="li">
@@ -161,64 +182,65 @@ const Vita = () => {
             <Box component="ul" sx={{ listStyle: 'none', pl: 0, m: 0 }}>
               <Box component="li">
                 <Typography component="p" sx={{ mt: 2 }}>
-                  In der psychotherapeutischen Praxis von Dipl.-Psych. Maria Schnell sammelte ich wertvolle Praxiserfahrungen.
+                  In der psychotherapeutischen Praxis von Dipl.-Psych. Maria Schnell sammelte ich wertvolle
+                  Praxiserfahrungen.
                 </Typography>
               </Box>
               <Box component="li">
                 <Typography component="p">
-                  Durchführung von verhaltenstherapeutischen Einzel- und Gruppensitzungen, die mir halfen, Theorie und Praxis zu verbinden.
+                  Durchführung von verhaltenstherapeutischen Einzel- und Gruppensitzungen, die mir halfen, Theorie und
+                  Praxis zu verbinden.
                 </Typography>
               </Box>
               <Box component="li">
                 <Typography component="p" sx={{ mt: 2 }}>
-                  Einsatz klinischer Hypnose bei der Behandlung von Angst- und Belastungsstörungen – ein innovativer Ansatz, den ich mit Begeisterung verfolge.
+                  Einsatz klinischer Hypnose bei der Behandlung von Angst- und Belastungsstörungen – ein innovativer
+                  Ansatz, den ich mit Begeisterung verfolge.
                 </Typography>
               </Box>
               <Box component="li">
                 <Typography component="p" sx={{ mt: 2 }}>
-                  Systemische Beratung für Paare und Familien, bei der ich meine empathischen Fähigkeiten weiterentwickeln konnte.
+                  Systemische Beratung für Paare und Familien, bei der ich meine empathischen Fähigkeiten
+                  weiterentwickeln konnte.
                 </Typography>
               </Box>
               <Box component="li">
                 <Typography component="p" sx={{ mt: 2 }}>
-                  Ambulante Betreuung bei Pinel Berlin – hier lernte ich, wie wichtig ein ganzheitlicher Ansatz im Alltag ist.
+                  Ambulante Betreuung bei Pinel Berlin – hier lernte ich, wie wichtig ein ganzheitlicher Ansatz im
+                  Alltag ist.
                 </Typography>
               </Box>
               <Box component="li">
                 <Typography component="p">
-                  Unterstützung psychisch erkrankter Menschen im Alltag, was mir zeigte, wie bedeutsam individuelle Hilfe ist.
+                  Unterstützung psychisch erkrankter Menschen im Alltag, was mir zeigte, wie bedeutsam individuelle
+                  Hilfe ist.
                 </Typography>
               </Box>
               <Box component="li">
                 <Typography component="p" sx={{ mt: 2 }}>
-                  Entwicklung von Bewältigungsstrategien und Krisenintervention – Erfahrungen, die mich persönlich und fachlich wachsen ließen.
+                  Entwicklung von Bewältigungsstrategien und Krisenintervention – Erfahrungen, die mich persönlich und
+                  fachlich wachsen ließen.
                 </Typography>
               </Box>
               <Box component="li">
                 <Typography component="p" sx={{ mt: 2 }}>
-                  Forschungspraktikum an der Humboldt Universität, wo ich die wissenschaftliche Basis meiner therapeutischen Arbeit vertiefte.
+                  Forschungspraktikum an der Humboldt Universität, wo ich die wissenschaftliche Basis meiner
+                  therapeutischen Arbeit vertiefte.
                 </Typography>
               </Box>
               <Box component="li">
                 <Typography component="p">
-                  Wissenschaftliche Untersuchungen zur Wirkung von Hypnose auf das Schmerzempfinden – ein spannendes Feld, das mein Interesse für alternative Therapieansätze weiter beflügelte.
+                  Wissenschaftliche Untersuchungen zur Wirkung von Hypnose auf das Schmerzempfinden – ein spannendes
+                  Feld, das mein Interesse für alternative Therapieansätze weiter beflügelte.
                 </Typography>
               </Box>
               <Box component="li">
                 <Typography component="p" sx={{ mt: 2 }}>
-                  Mitarbeit an klinischen Studien und Datenauswertungen – hierbei konnte ich meine analytischen Fähigkeiten und mein Engagement für evidenzbasierte Therapie unter Beweis stellen.
+                  Mitarbeit an klinischen Studien und Datenauswertungen – hierbei konnte ich meine analytischen
+                  Fähigkeiten und mein Engagement für evidenzbasierte Therapie unter Beweis stellen.
                 </Typography>
               </Box>
             </Box>
-          </section>
-
-          <section>
-            <Typography variant="h6" component="h2" sx={{ mt: 5 }}>
-              Mein therapeutischer Ansatz
-            </Typography>
-            <Typography component="p" sx={{ mt: 2 }}>
-              Ich bin fest davon überzeugt, dass in jedem Menschen einzigartige Ressourcen schlummern, die es ermöglichen, Herausforderungen zu meistern. Durch die Kombination fundierter verhaltenstherapeutischer Methoden mit systemischen und hypnotherapeutischen Ansätzen begleite ich meine Klient*innen auf ihrem individuellen Weg zu mehr Wohlbefinden. Dieser persönliche Ansatz spiegelt meine Leidenschaft und mein Engagement wider, Menschen in jeder Lebenslage einfühlsam zu unterstützen.
-            </Typography>
           </section>
         </Box>
       </Box>

@@ -99,7 +99,8 @@ const Policy = () => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          width: '100%',
+          justifyContent: 'center',
+          width: '90vw',
           p: { xs: 2, sm: 4 },
         }}
       >
@@ -111,7 +112,7 @@ const Policy = () => {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              width: '100%',
+              width: '90%',
               p: { xs: 2, sm: 4 },
             }}
           >
@@ -148,7 +149,10 @@ const Policy = () => {
                   Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen
                   <br />
                   Details entnehmen Sie der Datenschutzerklärung von Hetzner:{' '}
-                  <MuiLink href="https://www.hetzner.com/de/legal/privacy-policy/" target="_blank">
+                  <MuiLink href="https://www.hetzner.com/de/legal/privacy-policy/" target="_blank"  sx={{
+                    wordBreak: 'break-word', // Bricht lange Wörter/Links um
+                    overflowWrap: 'break-word', // Alternative für ältere Browser
+                  }}>
                     https://www.hetzner.com/de/legal/privacy-policy/
                   </MuiLink>
                   <br />
@@ -318,9 +322,16 @@ const Policy = () => {
                 </Typography>
                 <Typography component="p" paragraph sx={{ mb: 10 }}>
                   Das Unternehmen verfügt über eine Zertifizierung nach dem „EU-US Data Privacy Framework“ (DPF). Dieses Abkommen zwischen der Europäischen Union und den USA gewährleistet die Einhaltung europäischer Datenschutzstandards bei der Datenverarbeitung in den USA. Weitere Informationen erhalten Sie unter{' '}
-                  <MuiLink href="https://www.dataprivacyframework.gov/participant/5780" target="_blank">
-                    https://www.dataprivacyframework.gov/participant/5780
-                  </MuiLink>.
+                 <MuiLink
+                   href="https://www.dataprivacyframework.gov/participant/5780"
+                   target="_blank"
+                   sx={{
+                     wordBreak: 'break-word', // Bricht lange Wörter/Links um
+                     overflowWrap: 'break-word', // Alternative für ältere Browser
+                   }}
+                 >
+                   https://www.dataprivacyframework.gov/participant/5780
+                 </MuiLink>
                 </Typography>
               </section>
 

@@ -185,8 +185,7 @@ function MainContactFullWidth() {
         </script>
       </Helmet>
       <Box
-        component="section"
-        aria-labelledby="services-heading"
+        component="main"
         sx={{
           position: 'relative',
           display: 'flex',
@@ -199,6 +198,7 @@ function MainContactFullWidth() {
         }}
       >
         <Box
+          component="article"
           sx={{
             display: 'flex',
             flexDirection: 'column',
