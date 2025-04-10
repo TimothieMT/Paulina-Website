@@ -69,7 +69,18 @@ const Footer = () => {
           content="Footer der Website von Therapie Paulina Tolk – Psychotherapie in Lübeck. Alle Rechte vorbehalten."
         />
       </Helmet>
-      <Box component="footer" position="sticky" marginTop={3} sx={{ width: '100%' }}>
+      <Box
+        component="footer"
+        position="sticky"
+        marginTop={3}
+        sx={{
+          width: '100%',
+          height: '150px', // Feste Höhe
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center'
+        }}
+      >
         <Grid
           container
           justifyContent="space-between"

@@ -132,6 +132,7 @@ const Service = () => {
           mb: { xs: 4, sm: 8 },
           px: { xs: 2, sm: 4 },
         }}
+        minHeight={{ xs: 'auto', md: '100vh' }}
       >
         <Box
           sx={{

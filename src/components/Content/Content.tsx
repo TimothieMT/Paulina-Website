@@ -111,8 +111,9 @@ const Content = () => {
           flexDirection: 'row',
           justifyContent: 'space-around',
         }}
+        minHeight={{ xs: 'auto', md: '100vh' }}
       >
-        <Grid size={{ xs: 12, md: 5 }}>
+        <Grid size={{ xs: 12, md: 5 }} alignContent={'center'}>
           <Item sx={{ backgroundColor: '#efeeee', boxShadow: 'none' }}>
             <Box
               component="img"
@@ -122,7 +123,7 @@ const Content = () => {
               sx={{
                 width: '100%',
                 objectFit: 'cover',
-                borderRadius: '6  px',
+                borderRadius: '6px',
               }}
             />
           </Item>

@@ -196,6 +196,7 @@ function MainContactFullWidth() {
           mb: { xs: 4, sm: 8 },
           px: { xs: 2, sm: 4 },
         }}
+        minHeight={{ xs: 'auto', md: '100vh' }}
       >
         <Box
           component="article"
@@ -365,7 +366,7 @@ function MainContactFullWidth() {
             src="/place.png"
             alt="Ein schmaler, geschwungener Sandweg führt durch einen lichten Wald mit hohen, schlanken Bäumen entlang einer sanften, grasbewachsenen Böschung direkt am Meer."
             sx={{
-              width: '100%',
+              width: '80vw',
               height: '600px',
               objectFit: 'cover',
               borderRadius: 4,

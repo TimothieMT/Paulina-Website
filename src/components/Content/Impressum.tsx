@@ -98,6 +98,7 @@ const Impressum = () => {
           mb: { xs: 4, sm: 8 },
           px: { xs: 2, sm: 4 },
         }}
+        minHeight={{ xs: 'auto', md: '100vh' }}
       >
         <Box
           component="article"
@@ -164,12 +165,11 @@ const Impressum = () => {
           </Box>
 
 
-          {/* Inhaltlich Verantwortlicher */}
           <Box sx={{ mt: 5 }}>
             <Typography variant="h6" component="h2" gutterBottom>
               Inhaltlich Verantwortlich gemäß § 10 Absatz 3 MDStV:
             </Typography>
-            <Box component="address">
+            <Box component="address" fontStyle={'normal'}>
               <Typography component="p">M.Sc. Psych., HP Psych. Paulina Tolk</Typography>
               <Typography component="p">Systemische Therapeutin und Beraterin (SG)</Typography>
               <Typography component="p">Praxis für Psychotherapie</Typography>
@@ -178,7 +178,6 @@ const Impressum = () => {
             </Box>
           </Box>
 
-          {/* Aufsichtsbehörden */}
           <Box sx={{ mt: 5 }}>
             <Typography variant="h6" component="h2" gutterBottom>
               Aufsichtsbehörden
@@ -191,7 +190,6 @@ const Impressum = () => {
             </Typography>
           </Box>
 
-          {/* Gesetzliche Berufsbezeichnung */}
           <Box sx={{ mt: 5 }}>
             <Typography variant="h6" component="h2" gutterBottom>
               Gesetzliche Berufsbezeichnung
@@ -202,7 +200,6 @@ const Impressum = () => {
             </Typography>
           </Box>
 
-          {/* Zuständiges Finanzamt */}
           <Box sx={{ mt: 5 }}>
             <Typography variant="h6" component="h2" gutterBottom>
               Zuständiges Finanzamt
@@ -212,7 +209,6 @@ const Impressum = () => {
             </Typography>
           </Box>
 
-          {/* Umsatzsteuer */}
           <Box sx={{ mt: 5 }}>
             <Typography variant="h6" component="h2" gutterBottom>
               Umsatzsteuer
@@ -222,7 +218,6 @@ const Impressum = () => {
             </Typography>
           </Box>
 
-          {/* Berufshaftpflicht */}
           <Box sx={{ mt: 5 }}>
             <Typography variant="h6" component="h2" gutterBottom>
               Berufshaftpflicht
@@ -232,7 +227,6 @@ const Impressum = () => {
             </Typography>
           </Box>
 
-          {/* Berufsverbände */}
           <Box sx={{ mt: 5 }}>
             <Typography variant="h6" component="h2" gutterBottom>
               Berufsverbände
@@ -245,7 +239,6 @@ const Impressum = () => {
             </Typography>
           </Box>
 
-          {/* Haftungsausschluss */}
           <Box sx={{ mt: 5 }}>
             <Typography variant="h6" component="h2" gutterBottom>
               Haftungsausschluss
@@ -262,7 +255,6 @@ const Impressum = () => {
             </Typography>
           </Box>
 
-          {/* Haftung für Links */}
           <Box sx={{ mt: 5, mb: 10 }}>
             <Typography variant="h6" component="h2" gutterBottom>
               Haftung für Links

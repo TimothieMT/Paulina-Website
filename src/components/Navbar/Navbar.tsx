@@ -101,12 +101,11 @@ function Navbar() {
             alignItems: 'center',
           }}
         >
-          {/* Desktop Navigation */}
           <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3 }}>
             {[
-              { name: 'Kostenübersicht', path: '/overview' },
-              { name: 'Über mich', path: '/vita' },
-              { name: 'Leistungen', path: '/service' },
+              { name: 'Kostenübersicht', path: '/pricing' },
+              { name: 'Über mich', path: '/aboutme' },
+              { name: 'Leistungen', path: '/services' },
             ].map((page) => (
               <Button
                 key={page.name}
@@ -125,7 +124,6 @@ function Navbar() {
             ))}
           </Box>
 
-          {/* Logo */}
           <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center', mt: 3 }}>
             <Link to="/">
               <Box
@@ -137,7 +135,6 @@ function Navbar() {
             </Link>
           </Box>
 
-          {/* Desktop Button */}
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <Button
               component={Link}
@@ -154,7 +151,6 @@ function Navbar() {
             </Button>
           </Box>
 
-          {/* Mobile Navigation */}
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -180,9 +176,9 @@ function Navbar() {
               transformOrigin={{ vertical: 'top', horizontal: 'center' }}
             >
               {[
-                { name: 'Kostenübersicht', path: '/overview' },
-                { name: 'Werdegang', path: '/vita' },
-                { name: 'Leistungen', path: '/service' },
+                { name: 'Kostenübersicht', path: '/pricing' },
+                { name: 'Über mich', path: '/aboutme' },
+                { name: 'Leistungen', path: '/services' },
                 { name: 'Termin vereinbaren', path: '/contact' },
               ].map((page, index, array) => (
                 <MenuItem

@@ -17,13 +17,13 @@ function App() {
       <Divider />
       <Routes>
         <Route path="/" element={<Content />} />
-        <Route path="/overview" element={<Pricing />} />
-        <Route path="/vita" element={<Vita />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/aboutme" element={<Vita />} />
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/content" element={<Content />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/policy" element={<Policy />} />
-        <Route path="/service" element={<Service />} />
+        <Route path="/services" element={<Service />} />
       </Routes>
       <Divider />
       <Footer />

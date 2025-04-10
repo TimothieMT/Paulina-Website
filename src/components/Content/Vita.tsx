@@ -80,7 +80,7 @@ const Vita = () => {
   return (
     <ThemeProvider theme={customTheme}>
       <Helmet>
-        <title>Vita – Mein Werdegang & Qualifikationen | Psychotherapie Lübeck</title>
+        <title>Über mich – Mein Werdegang & Qualifikationen | Psychotherapie Lübeck</title>
         <meta
           name="description"
           content="Ein persönlicher Einblick in meinen Werdegang, Qualifikationen und beruflichen Erfahrungen. Erfahren Sie, wie meine Leidenschaft für Psychotherapie mich geprägt hat."
@@ -98,6 +98,7 @@ const Vita = () => {
           mb: { xs: 4, sm: 8 },
           px: { xs: 2, sm: 4 },
         }}
+        minHeight={{ xs: 'auto', md: '100vh' }}
       >
         <Box
           component="article"
