@@ -48,3 +48,5 @@ export default tseslint.config({
   },
 })
 ```
+
+Consider adding the "CodeRabbit Pull Request Reviews" badge to your repository to showcase automated pull request reviews. Copy the snippet below and paste it into your README.md file.
