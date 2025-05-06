@@ -48,5 +48,4 @@ export default tseslint.config({
   },
 })
 ```
-
-Consider adding the "CodeRabbit Pull Request Reviews" badge to your repository to showcase automated pull request reviews. Copy the snippet below and paste it into your README.md file.
+![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/TimothieMT/Paulina-Website?utm_source=oss&utm_medium=github&utm_campaign=TimothieMT%2FPaulina-Website&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
